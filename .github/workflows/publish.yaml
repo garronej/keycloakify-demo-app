@@ -57,32 +57,6 @@ jobs:
         else
             npm ci
         fi
-    - run: |
-        PACKAGE_MANAGER=npm
-        if [ -f "./yarn.lock" ]; then
-            PACKAGE_MANAGER=yarn
-        fi
-        $PACKAGE_MANAGER run enable_short_import_path
-      env:
-        DRY_RUN: "0"
-    - name: (DEBUG) Show how the files have been moved to enable short import
-      run: ls -lR
-    - name: Publishing on NPM
-      run: |
-        if [ "$(npm show . version)" = "$VERSION" ]; then
-          echo "This version is already published"
-          exit 0
-        fi
-        if [ "$NPM_TOKEN" = "" ]; then
-          echo "Can't publish on NPM, You must first create a secret called NPM_TOKEN that contains your NPM auth token. https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets"
-          false
-        fi
-        echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
-        npm publish
-        rm .npmrc
-      env:
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        VERSION: ${{ github.event.client_payload.to_version }}
     - name: Commit changes
       run: |
         git config --local user.email "ts_ci@github.com"
