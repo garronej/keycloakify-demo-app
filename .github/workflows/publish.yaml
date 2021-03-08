@@ -51,12 +51,7 @@ jobs:
         git branch latest
         git checkout latest
     - uses: actions/setup-node@v1
-    - run: |
-        if [ -f "./yarn.lock" ]; then
-            yarn install --frozen-lockfile                                                                                                                                                                                        
-        else
-            npm ci
-        fi
+    - run: yarn install --frozen-lockfile                                                                                                                                                                                        
     - name: Commit changes
       run: |
         git config --local user.email "ts_ci@github.com"

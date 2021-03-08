@@ -1,17 +1,16 @@
 {
     "name": "keycloakify-demo-app",
     "version": "0.0.0",
-    "description": "",
+    "description": "A demo project for keycloakify",
     "repository": {
         "type": "git",
         "url": "git://github.com/garronej/keycloakify-demo-app.git"
     },
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
     "scripts": {
-        "test": "node dist/test/",
-        "build": "tsc",
-        "enable_short_import_path": "npm run build && denoify_enable_short_npm_import_path"
+        "build": "react-scripts build && build-keycloak-theme",
+        "start": "react-scripts start",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
     },
     "author": "u/garronej",
     "license": "MIT",
@@ -24,11 +23,39 @@
     ],
     "keywords": [],
     "homepage": "https://github.com/garronej/keycloakify-demo-app",
+    "dependencies": {
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "web-vitals": "^1.0.1"
+    },
     "devDependencies": {
-        "@types/node": "^10.0.0",
-        "denoify": "^0.6.4",
-        "evt": "^1.8.11",
-        "lint-staged": "^10.5.4",
-        "typescript": "^4.1.5"
+        "@testing-library/jest-dom": "^5.11.4",
+        "@testing-library/react": "^11.1.0",
+        "@testing-library/user-event": "^12.1.10",
+        "@types/jest": "^26.0.15",
+        "@types/node": "^12.0.0",
+        "@types/react": "^17.0.0",
+        "@types/react-dom": "^17.0.0",
+        "react-scripts": "4.0.2",
+        "typescript": "^4.1.2",
+        "keycloakify": "^0.2.2"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
     }
 }
