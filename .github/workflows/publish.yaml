@@ -33,8 +33,10 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
+            v${{github.event.client_payload.to_version}}
             ${{ steps.docker_meta.outputs.tags }}
             ${{github.repository_owner}}/${{github.event.client_payload.repo}}:latest
+
           labels: ${{ steps.docker_meta.outputs.labels }}
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
@@ -134,3 +136,4 @@ jobs:
         git config --local user.name "ts_ci"
         git add -A
         git commit -am "Upload keycloak theme [automatic]"
+        git push origin latest
