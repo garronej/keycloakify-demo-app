@@ -5,11 +5,6 @@
     <br>
     <img src="https://github.com/garronej/keycloakify-demo-app/workflows/ci/badge.svg?branch=main">
 </p>
-<p align="center">
-  <a href="https://github.com/garronej/keycloakify-demo-app">Home</a>
-  -
-  <a href="https://github.com/garronej/keycloakify-demo-app">Documentation</a>
-</p>
 
 
 This repo is a demo project that shows how to setup Github Action to automatically
