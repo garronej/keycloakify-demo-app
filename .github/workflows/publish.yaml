@@ -6,6 +6,7 @@ jobs:
 
   docker:
     runs-on: ubuntu-latest
+    name: Build and publish docker image
     steps:
       - uses: actions/checkout@v2
         with:
@@ -40,7 +41,7 @@ jobs:
 
   build_keycloak_theme:
     runs-on: ubuntu-latest
-    name: ubuntu-latest
+    name: Build keycloak theme
     steps:
     - uses: actions/checkout@v2
       with:
