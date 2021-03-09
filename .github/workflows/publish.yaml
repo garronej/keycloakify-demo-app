@@ -33,7 +33,6 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            v${{github.event.client_payload.to_version}}
             ${{ steps.docker_meta.outputs.tags }}
             ${{github.repository_owner}}/${{github.event.client_payload.repo}}:latest
 
