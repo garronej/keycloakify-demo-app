@@ -78,7 +78,7 @@ jobs:
         commit_author_email: ts_ci@github.com
         exclude_commit_from_author_names_json: '["ts_ci"]'
 
-  publish:
+  release:
     runs-on: ubuntu-latest
     needs: update_changelog
     steps:
