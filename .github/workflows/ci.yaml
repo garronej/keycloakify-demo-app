@@ -9,18 +9,15 @@ on:
 
 jobs:
 
-  test_node:
+  test:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        node: [ '14', '13', '12' ]
         os: [ windows-latest, ubuntu-latest ]
-    name: Test with Node v${{ matrix.node }} on ${{ matrix.os }}
+    name: Test with on ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node }}
     - run: |
         yarn install --frozen-lockfile                                                                                                                                                                                        
         yarn build
@@ -32,7 +29,7 @@ jobs:
     env:
       PAT: ${{secrets.PAT}}
     if: github.event_name == 'push' && github.event.head_commit.author.name != 'ts_ci'
-    needs: test_node
+    needs: test
     steps:
 
     - name: Get version on latest

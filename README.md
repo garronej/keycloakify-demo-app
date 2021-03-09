@@ -16,48 +16,43 @@
   <a href="https://github.com/garronej/keycloakify-demo-app">Documentation</a>
 </p>
 
-# Install / Import
+# This repo is the source code of this website
+
+
+# Dev
 
 ```bash
-$ npm install --save keycloakify-demo-app
+
+# Manually run the build and run the docker image
+
+docker build -f Dockerfile.dev -t garronej/funcamp:dev .
+
+docker run \
+    -itd \
+    --rm \
+    -v ${PWD}:/app \
+    -v /app/node_modules \
+    -p 3001:3000 \
+    -e CHOKIDAR_USEPOLLING=true \
+    garronej/funcamp:dev
+
+
+# OR Relying on docker compose
+
+docker-compose -f docker-compose.dev.yml up -d --build
+# To run each time the dependencies have changed.
+# After that it is possible to use docker dashboard to start the app.
+# the app is available on http://localhost:3001
+
 ```
 
-```typescript
-import { myFunction, myObject } from "keycloakify-demo-app";
-```
-
-Specific imports:
-
-```typescript
-import { myFunction } from "keycloakify-demo-app/myFunction";
-import { myObject } from "keycloakify-demo-app/myObject";
-```
-
-## Import from HTML, with CDN
-
-Import it via a bundle that creates a global ( wider browser support ):
-
-```html
-<script src="//unpkg.com/keycloakify-demo-app/bundle.min.js"></script>
-<script>
-    const { myFunction, myObject } = keycloakify_demo_app;
-</script>
-```
-
-Or import it as an ES module:
-
-```html
-<script type="module">
-    import { myFunction, myObject } from "//unpkg.com/keycloakify-demo-app/zz_esm/index.js";
-</script>
-```
-
-_You can specify the version you wish to import:_ [unpkg.com](https://unpkg.com)
-
-## Contribute
+# Prod
 
 ```bash
-npm install
-npm run build
-npm test
+docker build -f Dockerfile.prod -t garronej/funcamp:prod .
+docker run -it --rm -p 1337:80 garronej/funcamp:prod
+
+#OR
+
+docker-compose -f docker-compose.prod.yml up -d --build
 ```
