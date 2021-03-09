@@ -6,9 +6,6 @@
     <br>
     <br>
     <img src="https://github.com/garronej/keycloakify-demo-app/workflows/ci/badge.svg?branch=main">
-    <img src="https://img.shields.io/bundlephobia/minzip/keycloakify-demo-app">
-    <img src="https://img.shields.io/npm/dw/keycloakify-demo-app">
-    <img src="https://img.shields.io/npm/l/keycloakify-demo-app">
 </p>
 <p align="center">
   <a href="https://github.com/garronej/keycloakify-demo-app">Home</a>
