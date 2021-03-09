@@ -34,9 +34,9 @@ The publishing will actually be performed only if ``npm test`` passes.
 
 # Results
 
-- The last version of the theme can always be downloaded at this URL:  
+- The last version of the theme can always be downloaded at this URL: https://github.com/garronej/keycloakify-demo-app/raw/latest/keycloak-theme.jar
 
-
+![image](https://user-images.githubusercontent.com/6702424/110417912-ba101d00-8096-11eb-8664-deae92664b9a.png)
 
 - You can find the theme for a specific release in the assets, example:
 
