@@ -96,10 +96,15 @@ jobs:
           BRANCH: ${{ needs.check_if_version_upgraded.outputs.branch }}
         run: |
           if [ "$IS_UPGRADED_VERSION" = "true" ]; then
-            echo ::set-output name=docker_tags::$GITHUB_REPOSITORY/$BRANCH,$GITHUB_REPOSITORY/$TO_VERSION,$GITHUB_REPOSITORY/latest
+            echo ::set-output name=docker_tags::$GITHUB_REPOSITORY:$BRANCH,$GITHUB_REPOSITORY:$TO_VERSION,$GITHUB_REPOSITORY:latest
           else
-            echo ::set-output name=docker_tags::$GITHUB_REPOSITORY/$BRANCH
+            echo ::set-output name=docker_tags::$GITHUB_REPOSITORY:$BRANCH
           fi
+
+      - name: Dump steps context
+        env:
+          STEPS_CONTEXT: ${{ toJSON(steps) }}
+        run: echo "$STEPS_CONTEXT"
       - uses: docker/build-push-action@v2
         with:
           push: true
