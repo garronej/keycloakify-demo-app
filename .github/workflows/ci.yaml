@@ -140,11 +140,18 @@ jobs:
     - uses: garronej/github_actions_toolkit@master
       with:
         action_name: update_changelog
+        branch: ${{ needs.check_if_version_upgraded.outputs.branch }}
 
   release:
     runs-on: ubuntu-latest
     needs: update_changelog
     steps:
+
+    - name: Show needs
+      env:
+        NEEDS_CONTEXT: ${{ toJSON(needs) }}
+      run: echo "$NEED_CONTEXT"
+
     - uses: actions/checkout@v2
       with:
         ref: ${{ needs.check_if_version_upgraded.outputs.branch }}
