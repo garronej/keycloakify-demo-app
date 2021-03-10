@@ -35,7 +35,7 @@ jobs:
       is_upgraded_version: ${{steps.step1.outputs.is_upgraded_version }}
       branch: ${{steps.step2.outputs.branch }}
     steps:
-    - uses: garronej/github_actions_toolkit@master
+    - uses: garronej/github_actions_toolkit@v2.1
       id: step1
       with: 
         action_name: is_package_json_version_upgraded
@@ -104,7 +104,7 @@ jobs:
       env:
         NEEDS_CONTEXT: ${{ toJSON(needs) }}
       run: echo "$NEED_CONTEXT"
-    - uses: garronej/github_actions_toolkit@master
+    - uses: garronej/github_actions_toolkit@v2.1
       with:
         action_name: update_changelog
         branch: ${{ needs.check_if_version_upgraded.outputs.branch }}
