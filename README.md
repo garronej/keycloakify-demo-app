@@ -15,7 +15,7 @@ using [keycloakify](https://github.com/InseeFrLab/keycloakify) in particular.
 - A [CHANGELOG.md](https://github.com/InseeFrLab/keycloakify-demo-app/blob/main/CHANGELOG.md) will be maintained for you using the commit messages between releases. *If you don't want a specific commit to appear
   in the changelog do something like. `git commit -am "yadi yada (changelog ignore)`.*
   
-![image](https://user-images.githubusercontent.com/6702424/110415780-ceeab180-8092-11eb-98a5-68ded9bfeeb7.png)
+![image](https://user-images.githubusercontent.com/6702424/110708577-2d32a400-81fb-11eb-98ae-499d5746c2f2.png)
 
 # DockerHub credentials
 
