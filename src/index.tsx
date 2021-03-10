@@ -11,11 +11,12 @@ import {
 } from "keycloakify";
 import { css } from "tss-react";
 
-const kcContext = realKcContext ??
+const kcContext = realKcContext ?? (
   false /* Set to true to test the login pages outside of Keycloak */
-  ? kcContextMocks.kcLoginContext /* Change to .kcRegisterContext for example */
-  :
-  undefined;
+    ? kcContextMocks.kcLoginContext /* Change to .kcRegisterContext for example */
+    :
+    undefined
+);
 
 console.log(kcContext);
 
