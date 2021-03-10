@@ -36,15 +36,10 @@ jobs:
       is_upgraded_version: ${{steps.step1.outputs.to_version }}
       branch: ${{steps.step2.outputs.branch }}
     steps:
-    - uses: garronej/github_actions_toolkit@v1.12
+    - uses: garronej/github_actions_toolkit@v2.0
       id: step1
       with: 
         action_name: is_package_json_version_upgraded
-        owner: ${{github.repository_owner}}
-        repo: ${{github.event.repository.name}}
-        branch: ${{ github.sha }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
     - name: Get current branch name
       id: step2
       run: echo ::set-output name=branch::${GITHUB_REF#refs/*/}
@@ -105,17 +100,9 @@ jobs:
       - build_keycloak_theme
       - docker
     steps:
-    - uses: garronej/github_actions_toolkit@v1.12
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+    - uses: garronej/github_actions_toolkit@v2.0
       with:
         action_name: update_changelog
-        owner: ${{ github.repository_owner }}
-        repo: ${{ github.event.client_payload.repo }}
-        branch_behind: v${{ needs.check_if_version_upgraded.outputs.to_version }}
-        branch_ahead: ${{ github.sha }}
-        commit_author_email: ts_ci@github.com
-        exclude_commit_from_author_names_json: '["ts_ci"]'
 
   release:
     runs-on: ubuntu-latest
@@ -141,7 +128,7 @@ jobs:
         FROM_VERSION: ${{ needs.check_if_version_upgraded.outputs.from_version }}
         TO_VERSION: ${{ needs.check_if_version_upgraded.outputs.to_version }}
     - name: Create Release
-      uses: ThomasPiskol/action-gh-release@8eb01d050288728124e879e2e724873f39433141
+      uses: garronej/action-gh-release@8eb01d050288728124e879e2e724873f39433141
       with:
         name: Release v${{ github.event.client_payload.to_version }}
         tag_name: v${{ github.event.client_payload.to_version }}
