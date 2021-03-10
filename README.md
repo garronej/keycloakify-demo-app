@@ -18,6 +18,8 @@ using [`keycloakify`](https://github.com/InseeFrLab/keycloakify) in particular.
   and `<org>/<repo>:latest` and `<org>/<repo>:X.Y.Z` when releasing a new version. [See on DockerHub](https://hub.docker.com/r/garronej/keycloakify-demo-app/tags?page=1&ordering=last_updated)
 - A [CHANGELOG.md](https://github.com/InseeFrLab/keycloakify-demo-app/blob/main/CHANGELOG.md) will be mainained for you using the commit messages between releases. *If you don't want a specific commit to appear
   in the changelog do something like. `git commit -am "yadi yada (changelog ignore)`.*
+  
+![image](https://user-images.githubusercontent.com/6702424/110415780-ceeab180-8092-11eb-98a5-68ded9bfeeb7.png)
 
 # DockerHub credentials
 
@@ -28,8 +30,4 @@ repository ``Settings`` tab, then ``Secrets`` you will need to add two new secre
 
 
 
-# Results
 
-- You can find the theme for a specific release in the assets, example:
-
- ![image](https://user-images.githubusercontent.com/6702424/110415780-ceeab180-8092-11eb-98a5-68ded9bfeeb7.png)
