@@ -3,13 +3,31 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { KcApp, kcContext, defaultKcProps } from "keycloakify";
+import {
+  KcApp,
+  defaultKcProps,
+  kcContext as realKcContext,
+  kcContextMocks
+} from "keycloakify";
+import { css } from "tss-react";
+
+const kcContext = realKcContext ??
+  false /* Set to true to test the login pages outside of Keycloak */
+  ? kcContextMocks.kcLoginContext /* Change to .kcRegisterContext for example */
+  :
+  undefined;
 
 console.log(kcContext);
 
 ReactDOM.render(
   kcContext !== undefined ?
-    <KcApp {...{ kcContext, ...defaultKcProps}}/> :
+    <KcApp
+      kcContext={kcContext}
+      {...{
+        ...defaultKcProps,
+        "kcHeaderWrapperClass": css({ "color": "red" })
+      }}
+    /> :
     <App />,
   document.getElementById("root")
 );
