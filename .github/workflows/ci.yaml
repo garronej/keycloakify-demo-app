@@ -54,36 +54,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: check_if_version_upgraded
     steps:
-      - name: Show envs
-        run: env
-      - name: Dump Needs context
-        env:
-          NEEDS_CONTEXT: ${{ toJSON(needs) }}
-        run: echo "$NEEDS_CONTEXT"
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: echo "$GITHUB_CONTEXT"
-      - name: Dump job context
-        env:
-          JOB_CONTEXT: ${{ toJSON(job) }}
-        run: echo "$JOB_CONTEXT"
-      - name: Dump steps context
-        env:
-          STEPS_CONTEXT: ${{ toJSON(steps) }}
-        run: echo "$STEPS_CONTEXT"
-      - name: Dump runner context
-        env:
-          RUNNER_CONTEXT: ${{ toJSON(runner) }}
-        run: echo "$RUNNER_CONTEXT"
-      - name: Dump strategy context
-        env:
-          STRATEGY_CONTEXT: ${{ toJSON(strategy) }}
-        run: echo "$STRATEGY_CONTEXT"
-      - name: Dump matrix context
-        env:
-          MATRIX_CONTEXT: ${{ toJSON(matrix) }}
-        run: echo "$MATRIX_CONTEXT"
       - uses: actions/checkout@v2
       - uses: docker/setup-qemu-action@v1
       - uses: docker/setup-buildx-action@v1
@@ -94,9 +64,9 @@ jobs:
       - name: Computing Docker image tags
         id: step1
         env: 
-          IS_UPGRADED_VERSION: ${{ needs.check_if_version_upgraded.is_upgraded_version }}
-          TO_VERSION: ${{ needs.check_version.to_version }}
-          BRANCH: ${{ needs.check_version.branch }}
+          IS_UPGRADED_VERSION: ${{ needs.check_if_version_upgraded.outputs.is_upgraded_version }}
+          TO_VERSION: ${{ needs.check_if_version_upgraded.outputs.to_version }}
+          BRANCH: ${{ needs.check_if_version_upgraded.outputs.branch }}
         run: |
           if [ "$IS_UPGRADED_VERSION" = "true" ]; then
             echo ::set-output name=docker_tags::$GITHUB_REPOSITORY/$BRANCH,$GITHUB_REPOSITORY/$TO_VERSION,$GITHUB_REPOSITORY/latest
@@ -112,7 +82,7 @@ jobs:
     name: Build keycloak theme
     runs-on: ubuntu-latest
     needs: check_if_version_upgraded
-    if: ${{ needs.check_if_version_upgraded.is_upgraded_version }}
+    if: ${{ needs.check_if_version_upgraded.outputs.is_upgraded_version }}
     steps:
     - uses: actions/checkout@v2
       with:
@@ -140,9 +110,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
       with:
         action_name: update_changelog
-        owner: ${{github.repository_owner}}
-        repo: ${{github.event.client_payload.repo}}
-        branch_behind: v${{ needs.check_if_version_upgraded.to_version }}
+        owner: ${{ github.repository_owner }}
+        repo: ${{ github.event.client_payload.repo }}
+        branch_behind: v${{ needs.check_if_version_upgraded.outputs.to_version }}
         branch_ahead: ${{ github.sha }}
         commit_author_email: ts_ci@github.com
         exclude_commit_from_author_names_json: '["ts_ci"]'
@@ -153,7 +123,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: ${{ needs.check_version.branch }}
+        ref: ${{ needs.check_if_version_upgraded.outputs.branch }}
     - name: Download keycloak_theme
       uses: actions/download-artifact@v2
       with:
@@ -168,14 +138,14 @@ jobs:
             echo "::set-output name=body::📋 [CHANGELOG](https://github.com/$GITHUB_REPOSITORY/blob/v$TO_VERSION/CHANGELOG.md)"
         fi
       env: 
-        FROM_VERSION: ${{ needs.check_if_version_upgraded.from_version }}
-        TO_VERSION: ${{ needs.check_if_version_upgraded.to_version }}
+        FROM_VERSION: ${{ needs.check_if_version_upgraded.outputs.from_version }}
+        TO_VERSION: ${{ needs.check_if_version_upgraded.outputs.to_version }}
     - name: Create Release
       uses: ThomasPiskol/action-gh-release@8eb01d050288728124e879e2e724873f39433141
       with:
         name: Release v${{ github.event.client_payload.to_version }}
         tag_name: v${{ github.event.client_payload.to_version }}
-        target_commitish: ${{ needs.check_version.branch }}
+        target_commitish: ${{ needs.check_if_version_upgraded.outputs.branch }}
         files: keycloak-theme.jar
         body: ${{ steps.step1.outputs.body }}
         draft: false
