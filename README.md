@@ -3,7 +3,7 @@
 </p>
 <p align="center">
     <i>This repo constitutes an easily reusable CI setup for React App in general and Apps that generates Keycloaks's theme 
-using [`keycloakify`](https://github.com/InseeFrLab/keycloakify) in particular.</i>
+        using <a href="https://github.com/InseeFrLab/keycloakify">keycloakify</a> in particular.</i>
     <br>
     <br>
     <img src="https://github.com/garronej/keycloakify-demo-app/workflows/ci/badge.svg?branch=main">
