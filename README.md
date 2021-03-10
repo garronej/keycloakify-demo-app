@@ -17,15 +17,12 @@ Beside the CI setup takes charges of:
 - Publishing the immage on Dockerhub
 - Testing that it builds and that tests passes on linux and windows.
 - Maintaining a CHANGELOG.
-- Publishing on NPM and creating corresponding GitHub releases.
-- Maintaining a ``latest`` branch always in sync with the latest release.
 
 ## Setting up
 
 will need to provide two tokens so that the workflow can publish on your behalf:
 
 Go to repository ``Settings`` tab, then ``Secrets`` you will need to add two new secrets:
-- ``PAT``, GitHub **P**ersonal **A**ccess **T**oken with the **repo** authorization. [link](https://github.com/settings/tokens)
 - ``DOCKERHUB_TOKEN``, you Dockerhub authorization token.
 - ``DOCKERHUB_USERNAME``, Your Dockerhub username
 
@@ -33,10 +30,6 @@ To trigger publishing edit the ``package.json`` ``version`` field ( ``0.0.0``-> 
 The publishing will actually be performed only if ``npm test`` passes.  
 
 # Results
-
-- The last version of the theme can always be downloaded at this URL: https://github.com/garronej/keycloakify-demo-app/raw/latest/keycloak-theme.jar
-
-![image](https://user-images.githubusercontent.com/6702424/110417912-ba101d00-8096-11eb-8664-deae92664b9a.png)
 
 - You can find the theme for a specific release in the assets, example:
 
