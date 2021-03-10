@@ -95,6 +95,7 @@ jobs:
           TO_VERSION: ${{ needs.check_if_version_upgraded.outputs.to_version }}
           BRANCH: ${{ needs.check_if_version_upgraded.outputs.branch }}
         run: |
+          echo "$IS_UPGRADED_VERSION"
           if [ "$IS_UPGRADED_VERSION" = "true" ]; then
             echo ::set-output name=docker_tags::$GITHUB_REPOSITORY:$BRANCH,$GITHUB_REPOSITORY:$TO_VERSION,$GITHUB_REPOSITORY:latest
           else
