@@ -2,12 +2,11 @@
     <img src="https://user-images.githubusercontent.com/6702424/110417203-6bae4e80-8095-11eb-8211-2592a5758668.png">  
 </p>
 <p align="center">
-    <i>This repo constitutes an easily reusable CI setup for React App in general and Apps that generates Keycloaks's theme 
-        using <a href="https://github.com/InseeFrLab/keycloakify">keycloakify</a> in particular.</i>
-    <br>
-    <br>
     <img src="https://github.com/garronej/keycloakify-demo-app/workflows/ci/badge.svg?branch=main">
 </p>
+
+This repo constitutes an easily reusable CI setup for React App in general and Apps that generates Keycloaks's theme 
+using [keycloakify](https://github.com/InseeFrLab/keycloakify) in particular.
 
 - To release **don't create a tag manually**, the CI do it for you. Just update the `package.json`'s version field and push.
 - The `.jar` files that bundle the Keycloak theme will be attached as an asset with every GitHub release. [Example](https://github.com/InseeFrLab/keycloakify-demo-app/releases/tag/v0.1.0)).
