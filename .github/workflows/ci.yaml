@@ -137,8 +137,8 @@ jobs:
     - name: Create Release
       uses: garronej/action-gh-release@8eb01d050288728124e879e2e724873f39433141
       with:
-        name: Release v${{ github.event.client_payload.to_version }}
-        tag_name: v${{ github.event.client_payload.to_version }}
+        name: Release v${{ needs.check_if_version_upgraded.outputs.to_version }}
+        tag_name: v${{ needs.check_if_version_upgraded.outputs.to_version }}
         target_commitish: ${{ needs.check_if_version_upgraded.outputs.branch }}
         files: keycloak-theme.jar
         body: ${{ steps.step1.outputs.body }}
