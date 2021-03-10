@@ -62,12 +62,11 @@ jobs:
           TO_VERSION: ${{ needs.check_if_version_upgraded.outputs.to_version }}
           BRANCH: ${{ needs.check_if_version_upgraded.outputs.branch }}
         run: |
+          OUT=$GITHUB_REPOSITORY:$BRANCH
           if [ "$IS_UPGRADED_VERSION" = "true" ]; then
-            OUT=$GITHUB_REPOSITORY:$BRANCH,$GITHUB_REPOSITORY:$TO_VERSION,$GITHUB_REPOSITORY:latest
-          else
-            OUT=$GITHUB_REPOSITORY:$BRANCH
+            OUT=$OUT,$GITHUB_REPOSITORY:$TO_VERSION,$GITHUB_REPOSITORY:latest
           fi
-          OUT=$(echo "$OUT" | awk '{print tolower($0)}')
+          OUT=$(echo "$OUT" | awk '{print tolower($0)}') 
           echo ::set-output name=docker_tags::$OUT
       - uses: docker/build-push-action@v2
         with:
