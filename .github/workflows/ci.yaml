@@ -56,6 +56,10 @@ jobs:
     steps:
       - name: Show envs
         run: env
+      - name: Dump Needs context
+        env:
+          NEEDS_CONTEXT: ${{ toJSON(needs) }}
+        run: echo "$NEEDS_CONTEXT"
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
