@@ -5,7 +5,7 @@
     <img src="https://github.com/garronej/keycloakify-demo-app/workflows/ci/badge.svg?branch=main">
 </p>
 
-This repo constitutes an easily reusable CI setup for React App in general and Apps that generates Keycloaks's theme 
+This repo constitutes an easily reusable CI setup for React App in general, and Apps that generates Keycloaks's theme 
 using [keycloakify](https://github.com/InseeFrLab/keycloakify) in particular.
 
 - To release **don't create a tag manually**, the CI do it for you. Just update the `package.json`'s version field and push.
