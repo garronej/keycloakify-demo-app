@@ -14,7 +14,8 @@ jobs:
     if: github.event.head_commit.author.name != 'ts_ci'
     strategy:
       matrix:
-       os: [ windows-latest, ubuntu-latest ]
+       #os: [ windows-latest, ubuntu-latest ]
+       os: [  ubuntu-latest ]
     name: Test with on ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
