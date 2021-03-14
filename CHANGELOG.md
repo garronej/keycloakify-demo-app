@@ -1,3 +1,9 @@
+## **0.2.0** (2021-03-10)  
+  
+- Last fixes  
+- Update README.md  
+- Update README.md    
+  
 ### **0.1.5** (2021-03-10)  
   
 - Update package.json  
