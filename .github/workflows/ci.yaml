@@ -101,10 +101,6 @@ jobs:
       - docker
       - check_if_version_upgraded
     steps:
-    - name: Show needs
-      env:
-        NEEDS_CONTEXT: ${{ toJSON(needs) }}
-      run: echo "$NEED_CONTEXT"
     - uses: garronej/github_actions_toolkit@v2.1
       with:
         action_name: update_changelog
