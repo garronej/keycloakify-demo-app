@@ -109,6 +109,7 @@ jobs:
       with:
         action_name: update_changelog
         branch: ${{ needs.check_if_version_upgraded.outputs.branch }}
+        commit_author_email: ts_ci@github.com
 
   release:
     runs-on: ubuntu-latest

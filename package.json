@@ -15,13 +15,6 @@
     },
     "author": "u/garronej",
     "license": "MIT",
-    "files": [
-        "src/",
-        "!src/test/",
-        "dist/",
-        "!dist/test/",
-        "!dist/tsconfig.tsbuildinfo"
-    ],
     "keywords": [],
     "dependencies": {
         "react": "^17.0.1",
