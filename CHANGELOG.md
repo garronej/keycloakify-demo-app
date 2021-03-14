@@ -1,3 +1,11 @@
+### **0.2.1** (2021-03-14)  
+  
+- Fix  
+- update  
+- update  
+- Update  
+- Small patch on  workflow    
+  
 ## **0.2.0** (2021-03-10)  
   
 - Last fixes  
