@@ -38,6 +38,10 @@ jobs:
         env:
           MATRIX_CONTEXT: ${{ toJSON(matrix) }}
         run: echo "$MATRIX_CONTEXT"
+      - name: Dump secret context
+        env:
+          SECRETS_CONTEXT: ${{ toJSON(secrets) }}
+        run: echo "$SECRETS_CONTEXT"
 
   test:
     runs-on: ${{matrix.os}}
@@ -79,9 +83,11 @@ jobs:
 
   docker:
     name: Build Docker image and publish on DockerHub
-    runs-on: ubuntu-latest
-    if: ${{ secrets.DOCKERHUB_TOKEN }}
     needs: check_if_version_upgraded
+    runs-on: ubuntu-latest
+    env:
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+    if: env.DOCKERHUB_TOKEN != null
     steps:
       - uses: actions/checkout@v2
       - uses: docker/setup-qemu-action@v1
