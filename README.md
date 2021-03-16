@@ -22,4 +22,14 @@ using [keycloakify](https://github.com/InseeFrLab/keycloakify) in particular.
 To enables the CI to publish on DockerHub on your behalf go to 
 repository ``Settings`` tab, then ``Secrets`` you will need to add two new secrets:
 - ``DOCKERHUB_TOKEN``, you Dockerhub authorization token.
-- ``DOCKERHUB_USERNAME``, Your Dockerhub username.
+- ``DOCKERHUB_USERNAME``, Your Dockerhub username.  
+
+# When there is a push on de `main` branch but the `package.json` vestion has not been updated
+
+![image](https://user-images.githubusercontent.com/6702424/111347879-ee2fa300-867f-11eb-921d-8f384304d59f.png)
+
+A new Docker image with tag `:main` is created but update changelog, build keycloak theme and release are skipped.
+
+# When there is a pull request
+
+
