@@ -68,7 +68,7 @@ jobs:
       id: step1
       with: 
         action_name: is_package_json_version_upgraded
-    - name: Get current branch name
+    - name: Get branch name
       id: step2
       run: |
         echo ::set-output name=branch::$(
