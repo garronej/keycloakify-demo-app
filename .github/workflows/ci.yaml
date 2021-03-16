@@ -70,7 +70,12 @@ jobs:
         action_name: is_package_json_version_upgraded
     - name: Get current branch name
       id: step2
-      run: echo ::set-output name=branch::${GITHUB_REF#refs/*/}
+      run: |
+        echo ::set-output name=branch::$(
+          [ "$GITHUB_EVENT_NAME" == "pull_request" ] &&
+            echo "$GITHUB_HEAD_REF" ||
+            echo "${GITHUB_REF#refs/*/}"
+        )
 
   docker:
     name: Build Docker image and publish on DockerHub
