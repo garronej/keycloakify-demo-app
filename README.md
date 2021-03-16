@@ -24,3 +24,8 @@ repository ``Settings`` tab, then ``Secrets`` you will need to add two new secre
 - ``DOCKERHUB_TOKEN``, you Dockerhub authorization token.
 - ``DOCKERHUB_USERNAME``, Your Dockerhub username.
 
+
+## On pull request
+
+![image](https://user-images.githubusercontent.com/6702424/111345106-4022f980-867d-11eb-9d56-a4d86f595bde.png)
+
