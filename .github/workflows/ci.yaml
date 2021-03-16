@@ -26,7 +26,6 @@ jobs:
 
   check_if_version_upgraded:
     name: Check if version upgrade
-    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     needs: test
     outputs:
@@ -96,6 +95,7 @@ jobs:
   update_changelog:
     name: Update CHANGELOG.md
     runs-on: ubuntu-latest
+    if: github.event_name == 'push'
     needs:
       - build_keycloak_theme
       - docker
