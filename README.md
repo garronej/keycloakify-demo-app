@@ -23,3 +23,4 @@ To enables the CI to publish on DockerHub on your behalf go to
 repository ``Settings`` tab, then ``Secrets`` you will need to add two new secrets:
 - ``DOCKERHUB_TOKEN``, you Dockerhub authorization token.
 - ``DOCKERHUB_USERNAME``, Your Dockerhub username.
+
