@@ -85,6 +85,7 @@ jobs:
     name: Build Docker image and publish on DockerHub
     needs: check_if_version_upgraded
     runs-on: ubuntu-latest
+    if: github.event.base.owner.login == github.event.head.owner.login 
     steps:
       - uses: actions/checkout@v2
       - uses: docker/setup-qemu-action@v1
