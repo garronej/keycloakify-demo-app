@@ -10,8 +10,9 @@ using [keycloakify](https://github.com/InseeFrLab/keycloakify) in particular.
 
 - To release **don't create a tag manually**, the CI do it for you. Just update the `package.json`'s version field and push.
 - The `.jar` files that bundle the Keycloak theme will be attached as an asset with every GitHub release. [Example](https://github.com/InseeFrLab/keycloakify-demo-app/releases/tag/v0.1.0)).
-- The CI publishes the app docker image on DockerHub. `<org>/<repo>:main` for each commits on `main`  
-  and `<org>/<repo>:latest` and `<org>/<repo>:X.Y.Z` when releasing a new version. [See on DockerHub](https://hub.docker.com/r/garronej/keycloakify-demo-app/tags?page=1&ordering=last_updated)
+- The CI publishes the app docker image on DockerHub. `<org>/<repo>:main` for each **commit** on `main`, `<org>/<repo>:<feature-branch-name>` for each **pull-request** on `main`
+  and when **releasing a new version**: `<org>/<repo>:latest` and `<org>/<repo>:X.Y.Z`
+  [See on DockerHub](https://hub.docker.com/r/garronej/keycloakify-demo-app/tags?page=1&ordering=last_updated)
 - A [CHANGELOG.md](https://github.com/InseeFrLab/keycloakify-demo-app/blob/main/CHANGELOG.md) will be maintained for you using the commit messages between releases. *If you don't want a specific commit to appear
   in the changelog do something like. `git commit -am "yadi yada (changelog ignore)`.*
   
@@ -23,13 +24,3 @@ To enables the CI to publish on DockerHub on your behalf go to
 repository ``Settings`` tab, then ``Secrets`` you will need to add two new secrets:
 - ``DOCKERHUB_TOKEN``, you Dockerhub authorization token.
 - ``DOCKERHUB_USERNAME``, Your Dockerhub username.  
-
-# When there is a push on de `main` branch but the `package.json` vestion has not been updated
-
-![image](https://user-images.githubusercontent.com/6702424/111347879-ee2fa300-867f-11eb-921d-8f384304d59f.png)
-
-A new Docker image with tag `:main` is created but update changelog, build keycloak theme and release are skipped.
-
-# When there is a pull request
-
-

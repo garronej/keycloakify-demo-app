@@ -44,7 +44,3 @@ jspm_packages
 
 /build_keycloak
 /build
-
-/.github/workflows/test.js
-/.github/workflows/x.json
-/.github/workflows/y.json
