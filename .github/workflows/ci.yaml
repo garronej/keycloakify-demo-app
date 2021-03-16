@@ -80,6 +80,7 @@ jobs:
   docker:
     name: Build Docker image and publish on DockerHub
     runs-on: ubuntu-latest
+    if: ${{ secrets.DOCKERHUB_TOKEN }}
     needs: check_if_version_upgraded
     steps:
       - uses: actions/checkout@v2
