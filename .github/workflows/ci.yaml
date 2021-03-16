@@ -85,9 +85,7 @@ jobs:
     name: Build Docker image and publish on DockerHub
     needs: check_if_version_upgraded
     runs-on: ubuntu-latest
-    env:
-      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-    if: env.DOCKERHUB_TOKEN != null
+    if: ${{ secrets.DOCKERHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: docker/setup-qemu-action@v1
