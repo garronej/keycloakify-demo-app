@@ -25,12 +25,12 @@ jobs:
         yarn build
 #       yarn test
     - uses: actions/upload-artifact@v2
-      if: ${{ matrix.os == "ubuntu-latest" }}
+      if: ${{ matrix.os == 'ubuntu-latest' }}
       with:
         name: build
         path: build
     - uses: actions/upload-artifact@v2
-      if: ${{ matrix.os == "ubuntu-latest" }}
+      if: ${{ matrix.os == 'ubuntu-latest' }}
       with:
         name: node_modules
         path: node_modules
