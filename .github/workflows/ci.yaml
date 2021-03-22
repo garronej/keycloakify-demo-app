@@ -29,11 +29,6 @@ jobs:
       with:
         name: build
         path: build
-    - uses: actions/upload-artifact@v2
-      if: ${{ matrix.os == 'ubuntu-latest' }}
-      with:
-        name: node_modules
-        path: node_modules
 
   check_if_version_upgraded:
     name: Check if version upgrade
@@ -109,9 +104,7 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: build
-    - uses: actions/download-artifact@v2
-      with:
-        name: node_modules
+    - run: yarn build --frozen-lockfile
     - run: npx build-keycloak-theme --external-assets
     - name: Upload keycloak theme
       uses: actions/upload-artifact@v2
