@@ -14,7 +14,8 @@ jobs:
     if: github.event.head_commit.author.name != 'actions'
     strategy:
       matrix:
-       os: [ windows-latest, ubuntu-latest ]
+       #os: [ windows-latest, ubuntu-latest ]
+       os: [ ubuntu-latest ]
     name: Test with on ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
@@ -24,10 +25,12 @@ jobs:
         yarn build
 #       yarn test
     - uses: actions/upload-artifact@v2
+      if: ${{ matrix.os == "ubuntu-latest" }}
       with:
         name: build
         path: build
     - uses: actions/upload-artifact@v2
+      if: ${{ matrix.os == "ubuntu-latest" }}
       with:
         name: node_modules
         path: node_modules
