@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/keycloakify-demo-app/static/css/main.56f9be9e.chunk.css",
-    "main.js": "/keycloakify-demo-app/static/js/main.1513b90a.chunk.js",
-    "main.js.map": "/keycloakify-demo-app/static/js/main.1513b90a.chunk.js.map",
-    "runtime-main.js": "/keycloakify-demo-app/static/js/runtime-main.a63025e1.js",
-    "runtime-main.js.map": "/keycloakify-demo-app/static/js/runtime-main.a63025e1.js.map",
-    "static/js/2.92b6c48e.chunk.js": "/keycloakify-demo-app/static/js/2.92b6c48e.chunk.js",
-    "static/js/2.92b6c48e.chunk.js.map": "/keycloakify-demo-app/static/js/2.92b6c48e.chunk.js.map",
-    "static/js/3.eae55081.chunk.js": "/keycloakify-demo-app/static/js/3.eae55081.chunk.js",
-    "static/js/3.eae55081.chunk.js.map": "/keycloakify-demo-app/static/js/3.eae55081.chunk.js.map",
+    "main.js": "/keycloakify-demo-app/static/js/main.8f657ca7.chunk.js",
+    "main.js.map": "/keycloakify-demo-app/static/js/main.8f657ca7.chunk.js.map",
+    "runtime-main.js": "/keycloakify-demo-app/static/js/runtime-main.e8082961.js",
+    "runtime-main.js.map": "/keycloakify-demo-app/static/js/runtime-main.e8082961.js.map",
+    "static/js/2.b238e148.chunk.js": "/keycloakify-demo-app/static/js/2.b238e148.chunk.js",
+    "static/js/2.b238e148.chunk.js.map": "/keycloakify-demo-app/static/js/2.b238e148.chunk.js.map",
+    "static/js/3.0f70846d.chunk.js": "/keycloakify-demo-app/static/js/3.0f70846d.chunk.js",
+    "static/js/3.0f70846d.chunk.js.map": "/keycloakify-demo-app/static/js/3.0f70846d.chunk.js.map",
     "index.html": "/keycloakify-demo-app/index.html",
     "static/css/main.56f9be9e.chunk.css.map": "/keycloakify-demo-app/static/css/main.56f9be9e.chunk.css.map",
-    "static/js/2.92b6c48e.chunk.js.LICENSE.txt": "/keycloakify-demo-app/static/js/2.92b6c48e.chunk.js.LICENSE.txt",
+    "static/js/2.b238e148.chunk.js.LICENSE.txt": "/keycloakify-demo-app/static/js/2.b238e148.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/keycloakify-demo-app/static/media/logo.6ce24c58.svg",
     "static/media/fonts.scss": "/keycloakify-demo-app/static/media/worksans-semibold-webfont.6b090766.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.a63025e1.js",
-    "static/js/2.92b6c48e.chunk.js",
+    "static/js/runtime-main.e8082961.js",
+    "static/js/2.b238e148.chunk.js",
     "static/css/main.56f9be9e.chunk.css",
-    "static/js/main.1513b90a.chunk.js"
+    "static/js/main.8f657ca7.chunk.js"
   ]
 }
