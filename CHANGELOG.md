@@ -1,3 +1,23 @@
+### **0.2.2** (2021-03-19)  
+  
+- Update keycloakify  
+- Add comment for complicated CI instruction  
+- Update readme  
+- Merge pull request #9 from cahuzacf/main
+
+Update App.tsx  
+- Update App.tsx  
+- update  
+- update  
+- update  
+- Update ci.yaml  
+- Update ci.yaml  
+- update  
+- update  
+- Update README.md  
+- update  
+- Remove unessesary logs    
+  
 ### **0.2.1** (2021-03-14)  
   
 - Fix  
