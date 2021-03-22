@@ -15,6 +15,11 @@ jobs:
     - run: |
         yarn install --frozen-lockfile
         yarn build
+    - name: Upload build dir
+      uses: actions/upload-artifact@v2
+      with:
+        name: build
+        path: build
     - run: git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${{github.repository}}.git
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
