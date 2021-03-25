@@ -1,3 +1,9 @@
+#This is an alternative Dockerfile that aims to speed up
+#to be used in the CI pipeline.
+#To avoid having to build the app over and over, instead of
+#re building the app in the fist stage as we do in ./Dockerfile
+#we symply copy over an assumed pre existing build/ dir.
+
 # build environment
 FROM node:14.16.0-alpine as build
 WORKDIR /app

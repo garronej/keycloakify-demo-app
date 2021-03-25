@@ -85,8 +85,9 @@ jobs:
         with:
           name: build
           path: build
-      - run: ls -l
+      - run: ls -la
       - run: pwd
+      - run: rm .dockerignore
       - uses: docker/build-push-action@v2
         with:
           push: true
