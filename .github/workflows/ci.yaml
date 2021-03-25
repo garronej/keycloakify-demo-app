@@ -113,6 +113,8 @@ jobs:
       with:
         ref: ${{ needs.check_if_version_upgraded.outputs.branch }}
     - uses: actions/setup-node@v1
+      with:
+        node-version: '15'
     - uses: actions/download-artifact@v2
       with:
         name: build
