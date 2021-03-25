@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/6702424/110708305-c44b2c00-81fa-11eb-8152-eeaaac0883d6.png">  
+    <img src="https://user-images.githubusercontent.com/6702424/112535310-6d258980-8dac-11eb-9e05-455416b4c086.png">  
 </p>
 <p align="center">
     <img src="https://github.com/garronej/keycloakify-demo-app/workflows/ci/badge.svg?branch=main">
