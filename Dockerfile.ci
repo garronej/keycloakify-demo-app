@@ -1,16 +1,20 @@
-#This is an alternative Dockerfile that aims to speed up
-#to be used in the CI pipeline.
-#To avoid having to build the app over and over, instead of
-#re building the app in the fist stage as we do in ./Dockerfile
-#we symply copy over from a assumed pre existing ./build.tar file.
+# This is an alternative Dockerfile 
+# that aims to be used in the CI pipeline.
+# The ./Dockerfile would work just fine in CI but we
+# save some time by symply coping over the build folder
+# from the context. 
+# On top of that if we use build-keycloak-theme --external-assets
+# we need to have exactly the same build (or build/static/js/main.[hash].chunk.js
+# could have changed.
 
 # build environment
 FROM node:14.16.0-alpine as build
 WORKDIR /app
 #We use ADD instead of COPY because build/ is in .dockerignore
 ADD build.tar build 
+COPY nginx.conf .
 
-# production environment
+# production environment (copy pasted from ./Dockerfile)
 FROM nginx:stable-alpine
 COPY --from=build /app/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf

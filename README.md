@@ -8,6 +8,8 @@
 This repo constitutes an easily reusable CI setup for React App in general, and Apps that generates Keycloaks's theme 
 using [keycloakify](https://github.com/InseeFrLab/keycloakify) in particular.
 
+- This CI is configured to both publish on [github-pages](https://github.com/garronej/keycloakify-demo-app/blob/224c43383548635a463fa68e8909c147ac189f0e/.github/workflows/ci.yaml#L172-L187) and on [DockerHub](https://github.com/garronej/keycloakify-demo-app/blob/224c43383548635a463fa68e8909c147ac189f0e/.github/workflows/ci.yaml#L56-L94). In practice you probably want one
+or the other but not both. 
 - To release **don't create a tag manually**, the CI do it for you. Just update the `package.json`'s version field and push.
 - The `.jar` files that bundle the Keycloak theme will be attached as an asset with every GitHub release. [Example](https://github.com/InseeFrLab/keycloakify-demo-app/releases/tag/v0.1.0)).
 - The CI publishes the app docker image on DockerHub. `<org>/<repo>:main` for each **commit** on `main`, `<org>/<repo>:<feature-branch-name>` for each **pull-request** on `main`
@@ -24,6 +26,12 @@ To enables the CI to publish on DockerHub on your behalf go to
 repository ``Settings`` tab, then ``Secrets`` you will need to add two new secrets:
 - ``DOCKERHUB_TOKEN``, you Dockerhub authorization token.
 - ``DOCKERHUB_USERNAME``, Your Dockerhub username.  
+
+# About keycloakify
+
+
+
+
 
 # Notes for self
 
