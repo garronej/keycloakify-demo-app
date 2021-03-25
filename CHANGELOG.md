@@ -1,3 +1,10 @@
+### **0.2.4** (2021-03-25)  
+  
+- Fix ci  
+- Optimize ci  
+- update  
+- update    
+  
 ### **0.2.3** (2021-03-25)  
   
 - update  
