@@ -2,7 +2,7 @@
 #to be used in the CI pipeline.
 #To avoid having to build the app over and over, instead of
 #re building the app in the fist stage as we do in ./Dockerfile
-#we symply copy over an assumed pre existing build/ dir.
+#we symply copy over from a assumed pre existing ./build.tar file.
 
 # build environment
 FROM node:14.16.0-alpine as build
