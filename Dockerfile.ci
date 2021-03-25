@@ -7,8 +7,8 @@
 # build environment
 FROM node:14.16.0-alpine as build
 WORKDIR /app
-#COPY build build
-ADD build.tar build
+#We use ADD instead of COPY because build/ is in .dockerignore
+ADD build.tar build 
 
 #! insert final stage from "./Dockerfile"
 
