@@ -1,3 +1,9 @@
+### **0.2.6** (2021-03-25)  
+  
+- update ci  
+- update  
+- Update README.md    
+  
 ### **0.2.5** (2021-03-25)  
   
 - update  
