@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <img src={myimg} alt="test_image" />
-        <p>hello world</p>
+        <p style={{ "fontFamily": '"Work Sans"' }}>hello world</p>
       </header>
     </div>
   );
