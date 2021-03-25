@@ -15,8 +15,8 @@ jobs:
     if: github.event.head_commit.author.name != 'actions'
     strategy:
       matrix:
-       #os: [ windows-latest, ubuntu-latest ]
-       os: [ ubuntu-latest ]
+       os: [ windows-latest, ubuntu-latest ]
+       #os: [ ubuntu-latest ]
     outputs:
       keycloakify_version: ${{ steps.step1.outputs.out }}
     steps:
@@ -36,6 +36,24 @@ jobs:
         echo ::set-output name=out::$(
           node -e 'console.log(require("./node_modules/keycloakify/package.json")["version"])'
         )
+
+  github_pages:
+    needs: test
+    if: ${{ needs.check_if_version_upgraded.outputs.is_upgraded_version == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/download-artifact@v2
+      with:
+        name: build
+        path: build
+    - uses: actions/setup-node@v2.1.3
+      with:
+        node-version: '15'
+    - run: git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${{github.repository}}.git
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - run: npx -y -p gh-pages@3.1.0 gh-pages -d build -u "github-actions-bot <actions@github.com>"
 
   check_if_version_upgraded:
     name: Check if version upgrade
@@ -127,26 +145,6 @@ jobs:
       with:
         name: keycloak_theme
         path: build_keycloak/target/*keycloak-theme*.jar
-
-  deploy_on_gh_pages:
-    needs: 
-      - check_if_version_upgraded
-      - test
-    if: ${{ needs.check_if_version_upgraded.outputs.is_upgraded_version == 'true' }}
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/download-artifact@v2
-      with:
-        name: build
-        path: build
-    - uses: actions/setup-node@v2.1.3
-      with:
-        node-version: '15'
-    - run: git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${{github.repository}}.git
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - run: npx -y -p gh-pages@3.1.0 gh-pages -d build -u "github-actions-bot <actions@github.com>"
 
   update_changelog:
     name: Update CHANGELOG.md
