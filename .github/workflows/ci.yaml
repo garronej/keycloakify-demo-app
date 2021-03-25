@@ -84,6 +84,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: build
+          path: build
       - uses: docker/build-push-action@v2
         with:
           push: true
@@ -104,6 +105,7 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: build
+        path: build
     - run: yarn --frozen-lockfile
     - run: npx build-keycloak-theme --external-assets
     - name: Upload keycloak theme
@@ -140,6 +142,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: keycloak_theme
+        path: build
     - run: mv *keycloak-theme*.jar keycloak-theme.jar
     - name: Build GitHub release body
       id: step1
@@ -173,6 +176,7 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: build
+        path: build
     - uses: actions/setup-node@v2.1.3
       with:
         node-version: '15'
