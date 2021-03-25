@@ -15,8 +15,8 @@ jobs:
     if: github.event.head_commit.author.name != 'actions'
     strategy:
       matrix:
-       os: [ windows-latest, ubuntu-latest ]
-       #os: [ ubuntu-latest ]
+       #os: [ windows-latest, ubuntu-latest ]
+       os: [ ubuntu-latest ]
     outputs:
       keycloakify_version: ${{ steps.step1.outputs.out }}
     steps:
