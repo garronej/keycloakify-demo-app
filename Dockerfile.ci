@@ -3,6 +3,8 @@ FROM node:14.16.0-alpine as build
 WORKDIR /app
 COPY build build
 
+#! insert final stage from "./Dockerfile"
+
 # production environment
 FROM nginx:stable-alpine
 COPY --from=build /app/build /usr/share/nginx/html
