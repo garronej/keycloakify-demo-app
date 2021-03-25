@@ -144,7 +144,6 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: keycloak_theme
-        path: build
     - run: mv *keycloak-theme*.jar keycloak-theme.jar
     - name: Build GitHub release body
       id: step1
