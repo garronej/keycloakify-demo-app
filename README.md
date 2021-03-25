@@ -29,10 +29,8 @@ repository ``Settings`` tab, then ``Secrets`` you will need to add two new secre
 
 # About keycloakify
 
-
-
-
-
+This repo is currently configured to build the theme with  [`--external-assets`](). 
+It you want the theme to be standalone just remove `--external-assets` [here]().
 # Notes for self
 
 docker build -f Dockerfile.ci -t garronej/keycloakify-demo-app:test .

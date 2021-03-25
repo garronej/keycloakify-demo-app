@@ -1,3 +1,15 @@
+/*
+If you import fonts like:
+    src: url("https://garronej.github.io/keycloakify-demo-app/fonts/worksans-bold-webfont.woff2") format("woff2")
+With the fonts placed in your public/ folder it will work with or without --external-assets
+As long as the font are imported with an explicit url and as long as the server serving the adds 
+allow-access-control-origin * to the request it works.
+
+If, however, you import fonts locally like
+    src: url("fonts/worksans-bold-webfont.woff2") format("woff2")
+
+With fonts placed in your source directory, it will only work with --external-assets
+*/
 
 @font-face {
     font-family: "Work Sans";
