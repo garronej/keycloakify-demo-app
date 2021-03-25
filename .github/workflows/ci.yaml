@@ -39,7 +39,6 @@ jobs:
 
   github_pages:
     needs: test
-    if: ${{ needs.check_if_version_upgraded.outputs.is_upgraded_version == 'true' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
