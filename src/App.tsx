@@ -2,8 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import myimg from "./myimg.png";
 
-console.log(process.env);
-
 function App() {
 
   return (

@@ -10,7 +10,6 @@ import {
   kcContextMocks
 } from "keycloakify";
 import { css } from "tss-react";
-import "./fonts.scss";
 
 const kcContext = realKcContext ?? (
   false /* Set to true to test the login pages outside of Keycloak */
@@ -19,7 +18,9 @@ const kcContext = realKcContext ?? (
     undefined
 );
 
-console.log(kcContext);
+if( kcContext !== undefined ){
+  console.log(kcContext);
+}
 
 ReactDOM.render(
   kcContext !== undefined ?
