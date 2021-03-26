@@ -12,7 +12,7 @@ import {
 import { css } from "tss-react";
 
 const kcContext = realKcContext ?? (
-  false /* Set to true to test the login pages outside of Keycloak */
+  true /* Set to true to test the login pages outside of Keycloak */
     ? kcContextMocks.kcLoginContext /* Change to .kcRegisterContext for example */
     :
     undefined
@@ -37,13 +37,13 @@ function Login() {
 
   return (
     <>
-      <div id="foobar" style={{ "width": "200px", "height": "200px" }}>Test that background image url works</div>
+      <div id="foobar" style={{ "width": "200px", "height": "200px" }}></div>
       <h1 style={{ "fontFamily": '"Work Sans"' }}>Test that the font apply</h1>
       <KcApp
         kcContext={kcContext}
         {...{
           ...defaultKcProps,
-          "kcHeaderWrapperClass": css({ "color": "red" })
+          "kcHeaderWrapperClass": css({ "color": "red", "fontFamily": '"Work Sans"' })
         }}
       />
     </>
