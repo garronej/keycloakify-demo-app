@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
        #os: [ windows-latest, ubuntu-latest ]
-       os: [ ubuntu-latest ]
+       os: [ ubuntu-20.04, ubuntu-latest ]
     outputs:
       keycloakify_version: ${{ steps.step1.outputs.out }}
     steps:
