@@ -33,4 +33,13 @@ This repo is currently configured to build the theme with  [`--external-assets`]
 If you want the theme to be standalone just remove `--external-assets` [here](https://github.com/garronej/keycloakify-demo-app/blob/f87f211c433d1520c9ecf66565c6b88779aa98ed/.github/workflows/ci.yaml#L139).
 # Notes for self
 
-docker build -f Dockerfile.ci -t garronej/keycloakify-demo-app:test .
+```bash
+docker build -f Dockerfile -t garronej/keycloakify-demo-app:test .
+#OR:
+yarn && yarn build && tar -cvf build.tar ./build && docker build -f Dockerfile.ci -t garronej/keycloakify-demo-app:test . && rm build.tar
+
+docker run -it -dp 8083:80 garronej/keycloakify-demo-app:test
+
+```
+
+http://localhost:8083/keycloakify-demo-app
