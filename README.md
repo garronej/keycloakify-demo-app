@@ -26,12 +26,7 @@ To enables the CI to publish on DockerHub on your behalf go to
 repository ``Settings`` tab, then ``Secrets`` you will need to add two new secrets:
 - ``DOCKERHUB_TOKEN``, you Dockerhub authorization token.
 - ``DOCKERHUB_USERNAME``, Your Dockerhub username.  
-
-# About keycloakify
-
-This repo is currently configured to build the theme with  [`--external-assets`](https://github.com/InseeFrLab/keycloakify#specify-from-where-the-resources-should-be-downloaded). 
-If you want the theme to be standalone just remove `--external-assets` [here](https://github.com/garronej/keycloakify-demo-app/blob/f87f211c433d1520c9ecf66565c6b88779aa98ed/.github/workflows/ci.yaml#L139).
-# Notes for self
+# Docker
 
 ```bash
 docker build -f Dockerfile -t garronej/keycloakify-demo-app:test .
@@ -40,6 +35,6 @@ yarn && yarn build && tar -cvf build.tar ./build && docker build -f Dockerfile.c
 
 docker run -it -dp 8083:80 garronej/keycloakify-demo-app:test
 
+# http://localhost:8083/keycloakify-demo-app won't work because of the nginx.config for / and not /keycloakify-demo-app
 ```
 
-http://localhost:8083/keycloakify-demo-app

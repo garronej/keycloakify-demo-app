@@ -137,7 +137,7 @@ jobs:
       with:
         name: build
         path: build
-    - run: npx -y -p keycloakify@$VER build-keycloak-theme --external-assets
+    - run: npx -y -p keycloakify@$VER build-keycloak-theme
       env: 
         VER: ${{ needs.test.outputs.keycloakify_version }}
     - name: Upload keycloak theme
