@@ -1,3 +1,9 @@
+### **0.2.10** (2021-03-28)  
+  
+- Remove all references to --external-assets  
+- Fix ngnix config  
+- Docker cmd in readme, work in progress on the ngnix config file    
+  
 ### **0.2.9** (2021-03-26)  
   
   
