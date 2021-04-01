@@ -22,7 +22,7 @@
         "react-dom": "^17.0.1",
         "tss-react": "^0.0.11",
         "web-vitals": "^1.0.1",
-        "keycloakify": "^0.3.15"
+        "keycloakify": "^0.3.19"
     },
     "devDependencies": {
         "@testing-library/jest-dom": "^5.11.4",
