@@ -1,7 +1,7 @@
 {
     "homepage": "https://garronej.github.io/keycloakify-demo-app/",
     "name": "keycloakify-demo-app",
-    "version": "0.2.10",
+    "version": "0.2.11",
     "description": "A demo project for keycloakify",
     "repository": {
         "type": "git",
@@ -18,7 +18,7 @@
     "license": "MIT",
     "keywords": [],
     "dependencies": {
-        "keycloakify": "^0.3.24",
+        "keycloakify": "^0.4.0",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
         "tss-react": "^0.0.11",
