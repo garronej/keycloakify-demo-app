@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from "react";
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
@@ -7,9 +7,13 @@ import {
   KcApp,
   defaultKcProps,
   kcContext as realKcContext,
-  kcContextMocks
+  kcContextMocks,
+  kcMessages,
+  useKcLanguageTag
 } from "keycloakify";
 import { css } from "tss-react";
+import tos_en_url from "./tos_en.md";
+import tos_fr_url from "./tos_fr.md";
 
 const kcContext = realKcContext ?? (
   false /* Set to true to test the login pages outside of Keycloak */
@@ -18,7 +22,7 @@ const kcContext = realKcContext ?? (
     undefined
 );
 
-if( kcContext !== undefined ){
+if (kcContext !== undefined) {
   console.log(kcContext);
 }
 
@@ -34,6 +38,32 @@ function Login() {
   if (kcContext === undefined) {
     throw new Error();
   }
+
+  const { kcLanguageTag } = useKcLanguageTag();
+
+  //Lazily download the therms and conditions in the appropriate language
+  //if we are on the terms.ftl page.
+  useEffect(
+    () => {
+
+      if (kcContext!.pageId !== "terms.ftl") {
+        return;
+      }
+
+      kcMessages[kcLanguageTag].termsTitle = "";
+
+      fetch((() => {
+        switch (kcLanguageTag) {
+          case "fr": return tos_fr_url;
+          default: return tos_en_url;
+        }
+      })())
+        .then(response => response.text())
+        .then(rawMarkdown => kcMessages[kcLanguageTag].termsText = rawMarkdown);
+
+    },
+    [kcLanguageTag]
+  );
 
   return (
     <>
