@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/keycloakify-demo-app/static/css/main.b8e1bcc5.chunk.css",
-    "main.js": "/keycloakify-demo-app/static/js/main.a03143c3.chunk.js",
-    "main.js.map": "/keycloakify-demo-app/static/js/main.a03143c3.chunk.js.map",
-    "runtime-main.js": "/keycloakify-demo-app/static/js/runtime-main.1ad504aa.js",
-    "runtime-main.js.map": "/keycloakify-demo-app/static/js/runtime-main.1ad504aa.js.map",
-    "static/js/2.ed8d55b1.chunk.js": "/keycloakify-demo-app/static/js/2.ed8d55b1.chunk.js",
-    "static/js/2.ed8d55b1.chunk.js.map": "/keycloakify-demo-app/static/js/2.ed8d55b1.chunk.js.map",
-    "static/js/3.68840c64.chunk.js": "/keycloakify-demo-app/static/js/3.68840c64.chunk.js",
-    "static/js/3.68840c64.chunk.js.map": "/keycloakify-demo-app/static/js/3.68840c64.chunk.js.map",
+    "main.js": "/keycloakify-demo-app/static/js/main.1c9bbe3b.chunk.js",
+    "main.js.map": "/keycloakify-demo-app/static/js/main.1c9bbe3b.chunk.js.map",
+    "runtime-main.js": "/keycloakify-demo-app/static/js/runtime-main.934f1998.js",
+    "runtime-main.js.map": "/keycloakify-demo-app/static/js/runtime-main.934f1998.js.map",
+    "static/js/2.98091f54.chunk.js": "/keycloakify-demo-app/static/js/2.98091f54.chunk.js",
+    "static/js/2.98091f54.chunk.js.map": "/keycloakify-demo-app/static/js/2.98091f54.chunk.js.map",
+    "static/js/3.8fe8a494.chunk.js": "/keycloakify-demo-app/static/js/3.8fe8a494.chunk.js",
+    "static/js/3.8fe8a494.chunk.js.map": "/keycloakify-demo-app/static/js/3.8fe8a494.chunk.js.map",
     "index.html": "/keycloakify-demo-app/index.html",
     "static/css/main.b8e1bcc5.chunk.css.map": "/keycloakify-demo-app/static/css/main.b8e1bcc5.chunk.css.map",
-    "static/js/2.ed8d55b1.chunk.js.LICENSE.txt": "/keycloakify-demo-app/static/js/2.ed8d55b1.chunk.js.LICENSE.txt",
+    "static/js/2.98091f54.chunk.js.LICENSE.txt": "/keycloakify-demo-app/static/js/2.98091f54.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/keycloakify-demo-app/static/media/logo.6ce24c58.svg",
     "static/media/tos_en.c09b3947.md": "/keycloakify-demo-app/static/media/tos_en.c09b3947.md",
     "static/media/tos_fr.e2782512.md": "/keycloakify-demo-app/static/media/tos_fr.e2782512.md"
   },
   "entrypoints": [
-    "static/js/runtime-main.1ad504aa.js",
-    "static/js/2.ed8d55b1.chunk.js",
+    "static/js/runtime-main.934f1998.js",
+    "static/js/2.98091f54.chunk.js",
     "static/css/main.b8e1bcc5.chunk.css",
-    "static/js/main.a03143c3.chunk.js"
+    "static/js/main.1c9bbe3b.chunk.js"
   ]
 }
