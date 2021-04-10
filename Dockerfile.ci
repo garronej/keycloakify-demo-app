@@ -1,11 +1,10 @@
 # This is an alternative Dockerfile 
 # that aims to be used in the CI pipeline.
-# The ./Dockerfile would work just fine in CI but we
-# save some time by symply coping over the build folder
-# from the context. 
-# On top of that if we use build-keycloak-theme --external-assets
-# we need to have exactly the same build (or build/static/js/main.[hash].chunk.js
-# could have changed.
+# In this version we assume that the app have been build
+# prior and archived into a build.tar file present in the context.
+# We have to do that because if we use build-keycloak-theme --external-assets
+# we must use the build/ directory that have been patched while building
+# the keycloak theme. 
 
 # build environment
 FROM node:14.16.0-alpine as build
