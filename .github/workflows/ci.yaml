@@ -147,8 +147,7 @@ jobs:
       env: 
         FROM_VERSION: ${{ needs.check_if_version_upgraded.outputs.from_version }}
         TO_VERSION: ${{ needs.check_if_version_upgraded.outputs.to_version }}
-    - name: Create Release
-      uses: garronej/action-gh-release@v0.2.0
+    - uses: garronej/action-gh-release@v0.2.0
       with:
         name: Release v${{ needs.check_if_version_upgraded.outputs.to_version }}
         tag_name: v${{ needs.check_if_version_upgraded.outputs.to_version }}
