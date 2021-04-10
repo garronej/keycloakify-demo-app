@@ -1,3 +1,11 @@
+### **0.2.12** (2021-04-10)  
+  
+- Remove comment for self explanatory code  
+- Attempt at simplifying even futher the workflow  
+- Attempt at simplifying even futher the workflow  
+- Attempt at simplifying even futher the workflow  
+- Update workflow    
+  
 ### **0.2.11** (2021-04-09)  
   
 - Terms and conditions  
