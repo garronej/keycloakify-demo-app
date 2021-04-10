@@ -53,20 +53,11 @@ jobs:
       from_version: ${{ steps.step1.outputs.from_version }}
       to_version: ${{ steps.step1.outputs.to_version }}
       is_upgraded_version: ${{steps.step1.outputs.is_upgraded_version }}
-      branch: ${{steps.step2.outputs.branch }}
     steps:
-    - uses: garronej/github_actions_toolkit@v2.1
+    - uses: garronej/github_actions_toolkit@v2.2
       id: step1
       with: 
         action_name: is_package_json_version_upgraded
-    - name: Get branch name
-      id: step2
-      run: |
-        echo ::set-output name=branch::$(
-          [ "$GITHUB_EVENT_NAME" == "pull_request" ] &&
-            echo "$GITHUB_HEAD_REF" ||
-            echo "${GITHUB_REF#refs/*/}"
-        )
 
   docker:
     name: Build Docker image 
@@ -88,9 +79,12 @@ jobs:
         env: 
           IS_UPGRADED_VERSION: ${{ needs.check_if_version_upgraded.outputs.is_upgraded_version }}
           TO_VERSION: ${{ needs.check_if_version_upgraded.outputs.to_version }}
-          BRANCH: ${{ needs.check_if_version_upgraded.outputs.branch }}
         run: |
-          OUT=$GITHUB_REPOSITORY:$BRANCH
+          OUT=$GITHUB_REPOSITORY:$(
+          [ "$GITHUB_EVENT_NAME" == "pull_request" ] &&
+            echo "$GITHUB_HEAD_REF" ||
+            echo "${GITHUB_REF#refs/*/}"
+          )
           if [ "$IS_UPGRADED_VERSION" = "true" ]; then
             OUT=$OUT,$GITHUB_REPOSITORY:$TO_VERSION,$GITHUB_REPOSITORY:latest
           fi
@@ -113,12 +107,11 @@ jobs:
     if: github.event_name == 'push'
     needs:
       - docker
-      - check_if_version_upgraded
     steps:
-    - uses: garronej/github_actions_toolkit@v2.1
+    - uses: garronej/github_actions_toolkit@v2.2
       with:
         action_name: update_changelog
-        branch: ${{ needs.check_if_version_upgraded.outputs.branch }}
+        branch: ${{ github.ref }}
         commit_author_email: actions@github.com
 
   release:
@@ -129,7 +122,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: ${{ needs.check_if_version_upgraded.outputs.branch }}
+        ref: ${{ github.ref }}
     - uses: actions/download-artifact@v2
       with:
         name: keycloak_theme
@@ -146,11 +139,11 @@ jobs:
         FROM_VERSION: ${{ needs.check_if_version_upgraded.outputs.from_version }}
         TO_VERSION: ${{ needs.check_if_version_upgraded.outputs.to_version }}
     - name: Create Release
-      uses: garronej/action-gh-release@8eb01d050288728124e879e2e724873f39433141
+      uses: garronej/action-gh-release@v0.2.0
       with:
         name: Release v${{ needs.check_if_version_upgraded.outputs.to_version }}
         tag_name: v${{ needs.check_if_version_upgraded.outputs.to_version }}
-        target_commitish: ${{ needs.check_if_version_upgraded.outputs.branch }}
+        target_commitish: ${{ github.ref }}
         files: keycloak-theme.jar
         body: ${{ steps.step1.outputs.body }}
         draft: false
