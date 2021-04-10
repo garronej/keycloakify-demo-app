@@ -33,14 +33,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     outputs:
-      from_version: ${{ steps.step1.outputs.from_version }}
-      to_version: ${{ steps.step1.outputs.to_version }}
-      is_upgraded_version: ${{steps.step1.outputs.is_upgraded_version }}
-      is_authorized: |
-        ${{ 
-          github.event_name == 'push' || 
-          github.event.pull_request.head.repo.owner.login == github.event.pull_request.base.repo.owner.login 
-        }}
+      from_version: steps.step1.outputs.from_version
+      to_version: steps.step1.outputs.to_version
+      is_upgraded_version: steps.step1.outputs.is_upgraded_version
     steps:
     - uses: garronej/github_actions_toolkit@v2.2
       id: step1
@@ -51,8 +46,8 @@ jobs:
     needs: check_if_version_upgraded
     runs-on: ubuntu-latest
     if: |
-      needs.check_if_version_upgraded.outputs.is_upgraded_version == 'true' && 
-      needs.check_if_version_upgraded.outputs.is_authorized
+      github.event_name == 'push' &&
+      needs.check_if_version_upgraded.outputs.is_upgraded_version == 'true'
     steps:
     - uses: actions/checkout@v2
     - uses: actions/download-artifact@v2
@@ -71,9 +66,12 @@ jobs:
     name: Build Docker image 
     needs: check_if_version_upgraded
     runs-on: ubuntu-latest
-    # Build the docker image only if it's a push on master or if it's a PR from a branch (and not a PR from a fork)
-    # It would be more straightforward to test if secrets.DOCKERHUB_TOKEN is defined but GitHub Action don't allow it.
-    if: needs.check_if_version_upgraded.outputs.is_authorized
+    # We publish the the docker image only if it's a push on the default branch or if it's a PR from a 
+    # branch (meaning not a PR from a fork). It would be more straightforward to test if secrets.DOCKERHUB_TOKEN is 
+    # defined but GitHub Action don't allow it.
+    if: |
+      github.event_name == 'push' || 
+      github.event.pull_request.head.repo.owner.login == github.event.pull_request.base.repo.owner.login 
     steps:
       - uses: actions/checkout@v2
       - uses: docker/setup-qemu-action@v1
@@ -115,7 +113,6 @@ jobs:
     if: |
       github.event_name == 'push' &&
       needs.check_if_version_upgraded.outputs.is_upgraded_version == 'true' && 
-      needs.check_if_version_upgraded.outputs.is_authorized
     needs:
       - docker
       - github_pages
