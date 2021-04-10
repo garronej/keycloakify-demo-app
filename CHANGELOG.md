@@ -1,3 +1,8 @@
+### **0.2.11** (2021-04-09)  
+  
+- Terms and conditions  
+- Sync with latest keyclaok version    
+  
 ### **0.2.10** (2021-03-28)  
   
 - Remove all references to --external-assets  
