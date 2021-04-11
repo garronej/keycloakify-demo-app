@@ -20,6 +20,13 @@ or the other but not both.
   
 ![image](https://user-images.githubusercontent.com/6702424/110708577-2d32a400-81fb-11eb-98ae-499d5746c2f2.png)
 
+# About keycloakify
+
+ This repo is currently configured to build the theme with  [`--external-assets`](https://github.com/InseeFrLab/keycloakify#specify-from-where-the-resources-should-be-downloaded). 
+ If you want the theme to be standalone just remove `--external-assets` [here](https://github.com/garronej/keycloakify-demo-app/blob/f87f211c433d1520c9ecf66565c6b88779aa98ed/.github/workflows/ci.yaml#L139).
+
+ If you want an example of an app that put that setup in production checkout onyxia-ui: [the repo](https://github.com/InseeFrLab/onyxia-ui), [the login](https://auth.lab.sspcloud.fr/auth/realms/sspcloud/protocol/openid-connect/auth?client_id=onyxia&redirect_uri=https%3A%2F%2Fonyxia.lab.sspcloud.fr), [the app](https://datalab.sspcloud.fr).  
+
 # DockerHub credentials
 
 To enables the CI to publish on DockerHub on your behalf go to 
