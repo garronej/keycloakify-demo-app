@@ -1,3 +1,8 @@
+### **0.2.13** (2021-04-11)  
+  
+- Sync with latest version  
+- Update readme to include docs about permalink    
+  
 ### **0.2.12** (2021-04-10)  
   
 - Remove comment for self explanatory code  
