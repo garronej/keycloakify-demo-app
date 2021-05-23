@@ -27,9 +27,9 @@ if (kcContext !== undefined) {
 }
 
 ReactDOM.render(
-  kcContext !== undefined ?
-    <Login /> :
-    <App />,
+  kcContext === undefined ?
+    <App /> :
+    <Login />,
   document.getElementById("root")
 );
 
