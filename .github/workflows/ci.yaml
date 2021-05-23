@@ -114,6 +114,7 @@ jobs:
       github.event_name == 'push' &&
       needs.check_if_version_upgraded.outputs.is_upgraded_version == 'true'
     needs:
+      - check_if_version_upgraded
       - docker
       - github_pages
     steps:
