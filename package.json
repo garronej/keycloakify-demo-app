@@ -18,10 +18,10 @@
     "license": "MIT",
     "keywords": [],
     "dependencies": {
-        "keycloakify": "^1.0.2",
+        "keycloakify": "^1.1.0",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
-        "tss-react": "^0.0.11",
+        "tss-react": "^0.0.12",
         "web-vitals": "^1.0.1"
     },
     "devDependencies": {
