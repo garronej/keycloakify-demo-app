@@ -1,3 +1,18 @@
+### **0.2.14** (2021-06-22)  
+  
+- Update deps  
+- Update deps  
+- Update deps  
+- Update deps  
+- Give insturction about how to use as standalone  
+- Make it easier to remove lines for standalone mode  
+- Update ci.yaml  
+- Install dependencies with cache  
+- ACAO for .md  
+- Update to to the latest version of keycloakify  
+- Update readme for --external-assets  
+- Update nginx.conf    
+  
 ### **0.2.13** (2021-04-11)  
   
 - Sync with latest version  
