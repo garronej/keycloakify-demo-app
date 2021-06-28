@@ -4,10 +4,9 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
-  KcApp,
+  KcApp as KcAppBase,
   defaultKcProps,
-  kcContext as realKcContext,
-  kcContextMocks,
+  getKcContext,
   kcMessages,
   useKcLanguageTag
 } from "keycloakify";
@@ -15,12 +14,10 @@ import { css } from "tss-react";
 import tos_en_url from "./tos_en.md";
 import tos_fr_url from "./tos_fr.md";
 
-const kcContext = realKcContext ?? (
-  false /* Set to true to test the login pages outside of Keycloak */
-    ? kcContextMocks.kcLoginContext /* Change to .kcRegisterContext for example */
-    :
-    undefined
-);
+const { kcContext } = getKcContext({
+  /* Uncomment to test the login page for development */
+  //"mockPageId": "login.ftl"
+});
 
 if (kcContext !== undefined) {
   console.log(kcContext);
@@ -29,11 +26,11 @@ if (kcContext !== undefined) {
 ReactDOM.render(
   kcContext === undefined ?
     <App /> :
-    <Login />,
+    <KcApp />,
   document.getElementById("root")
 );
 
-function Login() {
+function KcApp() {
 
   if (kcContext === undefined) {
     throw new Error();
@@ -66,18 +63,13 @@ function Login() {
   );
 
   return (
-    <>
-      <div id="foobar" style={{ "width": "200px", "height": "200px" }}></div>
-      <h1 style={{ "fontFamily": '"Work Sans"' }}>Test that the font apply</h1>
-      <KcApp
+      <KcAppBase
         kcContext={kcContext}
         {...{
           ...defaultKcProps,
           "kcHeaderWrapperClass": css({ "color": "red", "fontFamily": '"Work Sans"' })
         }}
       />
-    </>
-
   );
 }
 

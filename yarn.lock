@@ -5067,6 +5067,15 @@ evt@2.0.0-beta.15:
     minimal-polyfills "^2.1.5"
     run-exclusive "^2.2.14"
 
+evt@2.0.0-beta.20:
+  version "2.0.0-beta.20"
+  resolved "https://registry.yarnpkg.com/evt/-/evt-2.0.0-beta.20.tgz#a018ff46a7dcb475c488e6508ac3aec7910e76fb"
+  integrity sha512-aIIqrDkQ5Hm4zzW7v9STZbO9RcwAI2vMQUkjQ7Bw4YkWOv2zoIl6ooJZ6942JU7UCYKWSi1u5BBtyoiXUSsnMA==
+  dependencies:
+    minimal-polyfills "^2.2.1"
+    run-exclusive "^2.2.14"
+    tsafe "^0.2.2"
+
 exec-sh@^0.3.2:
   version "0.3.6"
   resolved "https://registry.yarnpkg.com/exec-sh/-/exec-sh-0.3.6.tgz#ff264f9e325519a60cb5e273692943483cca63bc"
@@ -7311,18 +7320,19 @@ jsprim@^1.2.2:
     array-includes "^3.1.2"
     object.assign "^4.1.2"
 
-keycloakify@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/keycloakify/-/keycloakify-1.2.0.tgz#25b6c344f57fc3226183285edb89d1ce0f460488"
-  integrity sha512-3iAfUmQqVIBBnOfuyGl4/Wxrt1lp2LdCOSH5XNRa7Hrq9H6JlCFYMl3I5ER1aR7La0jve2zVnzdpLeDxzmkA8A==
+keycloakify@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/keycloakify/-/keycloakify-2.0.0.tgz#d4febff71655ba5dffe2a8769400df84265ec32f"
+  integrity sha512-JRu6WQi1gzGpT6yHN95f3XZYlwjUEhPd+i0aLDoQIUy6kdT9HHSEGBexFkATZzJFJjSVIkp7oh2dq8NoS+Dmjg==
   dependencies:
     cheerio "^1.0.0-rc.5"
-    evt "2.0.0-beta.15"
+    evt "2.0.0-beta.20"
     minimal-polyfills "^2.1.6"
     path "^0.12.7"
-    powerhooks "^0.1.0"
+    powerhooks "^0.1.6"
     react-markdown "^5.0.3"
     scripting-tools "^0.19.13"
+    tsafe "^0.4.1"
     tss-react "^0.0.12"
 
 killable@^1.0.1:
@@ -9505,14 +9515,13 @@ postcss@^8.1.0:
     nanoid "^3.1.23"
     source-map-js "^0.6.2"
 
-powerhooks@^0.1.0:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/powerhooks/-/powerhooks-0.1.1.tgz#5ce825d595673a5c6f86b227e0fcaca1972bd90d"
-  integrity sha512-I8bzTU/uRUyeTkeyAR54g862pwMcAX/ErN3xqdUt7n28riqv93N0Cm900018bNRKBq8ovnb+VxOQ+MXJwhkUOA==
+powerhooks@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/powerhooks/-/powerhooks-0.1.6.tgz#23dfb6c781bbfdd20ea37ff5a2a0fd5a9799d591"
+  integrity sha512-S1b5awSAimyt9jXZsm+N8/GFBtzLPzmVIUyVLq/IADDe4aAcxFWBgXSWTOFc31PlWE9uz2K/NovsQNDf4Fr52A==
   dependencies:
     evt "2.0.0-beta.15"
     memoizee "^0.4.15"
-    minimal-polyfills "^2.2.1"
     resize-observer-polyfill "^1.5.1"
     tsafe "^0.1.0"
 
@@ -11558,6 +11567,16 @@ tsafe@^0.1.0:
   version "0.1.15"
   resolved "https://registry.yarnpkg.com/tsafe/-/tsafe-0.1.15.tgz#9e2b6137fb5a49fc7c23cb0bc49ae09bab215f2a"
   integrity sha512-aAWMOACHXMmwE2zRcQpBv+whxYqB4zvAbs+dzwbnGaGK9NAOQ65m0+WyO+jw/41JzCX7orJU/ieFHTmgehTOKA==
+
+tsafe@^0.2.2:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/tsafe/-/tsafe-0.2.4.tgz#f2cffb9b33e4d20c6f9800aa1c45bee02d917aa1"
+  integrity sha512-oS/0wJKgEv/iDow/6U51xjAascJVtUQfZQMCDdoOS+VnMlWZFdXGMKuoH47JYs6hEWHpO+Z5pC5oAFFHiPfTLg==
+
+tsafe@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/tsafe/-/tsafe-0.4.1.tgz#00af1be2db82abb4be531209b90232d7954e1a03"
+  integrity sha512-+OZ0gdgmwcru+MOSheCx+ymAvQz+1/ui+KFJRuaq0t2m8RNrlf7eSzEieptoPQXPY67Mdkqgkdjknn8azoD5sw==
 
 tsconfig-paths@^3.9.0:
   version "3.9.0"

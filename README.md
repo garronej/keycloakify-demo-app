@@ -27,6 +27,10 @@ If you want an example of an app that put that setup in production checkout onyx
 
 # Important note about Keycloakify
 
+This branch is configured for customizing only the css of the keycloak pages.  
+If you want to implement a more advanced configuration you can checkout the 
+[look_and_feel](https://github.com/garronej/keycloakify-demo-app/tree/look_and_feel) branch.  
+
  This repo is currently configured to build the theme with  [`--external-assets`](https://github.com/InseeFrLab/keycloakify#specify-from-where-the-resources-should-be-downloaded). 
  If your keycloak pages need to stay up even when your app is down you should remove `--external-assets` [here](https://github.com/garronej/keycloakify-demo-app/blob/f87f211c433d1520c9ecf66565c6b88779aa98ed/.github/workflows/ci.yaml#L139).
 
