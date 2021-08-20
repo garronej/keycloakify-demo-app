@@ -10,7 +10,7 @@ import {
   kcMessages,
   useKcLanguageTag
 } from "keycloakify";
-import { css } from "tss-react";
+import { useCssAndCx } from "tss-react";
 import tos_en_url from "./tos_en.md";
 import tos_fr_url from "./tos_fr.md";
 
@@ -37,6 +37,8 @@ function KcApp() {
   }
 
   const { kcLanguageTag } = useKcLanguageTag();
+
+  const { css } = useCssAndCx();
 
   //Lazily download the therms and conditions in the appropriate language
   //if we are on the terms.ftl page.
