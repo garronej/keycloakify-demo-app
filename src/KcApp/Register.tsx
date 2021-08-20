@@ -2,8 +2,8 @@ import { memo } from "react";
 import { Template } from "keycloakify/lib/components/Template";
 import type { KcProps } from "keycloakify";
 import { useKcMessage } from "keycloakify/lib/i18n/useKcMessage";
-import type { KcContext } from "./kcContext";
-import { cx } from "tss-react";
+import type { KcContext } from "./kcContext";
+import { useCssAndCx } from "tss-react";
 
 //This is a copy paste from https://github.com/InseeFrLab/keycloakify/blob/main/src/lib/components/Register.tsx
 //It is now up to us to implement a special behavior to leverage the non standard authorizedMailDomains
@@ -12,10 +12,6 @@ import { cx } from "tss-react";
 type KcContext_Register = Extract<KcContext, { pageId: "register.ftl"; }>;
 
 export const Register = memo(({ kcContext, ...props }: { kcContext: KcContext_Register; } & KcProps) => {
-
-    const { msg, msgStr } = useKcMessage();
-
-    console.log(`TODO: Do something with ${kcContext.authorizedMailDomains}`);
 
     const {
         url,
@@ -26,6 +22,12 @@ export const Register = memo(({ kcContext, ...props }: { kcContext: KcContext_Re
         recaptchaRequired,
         recaptchaSiteKey
     } = kcContext;
+
+    const { msg, msgStr } = useKcMessage();
+
+    const { cx } = useCssAndCx();
+
+    console.log(`TODO: Do something with ${kcContext.authorizedMailDomains}`);
 
     return (
         <Template
