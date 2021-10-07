@@ -1,3 +1,10 @@
+### **0.2.15** (2021-10-07)  
+  
+- Update keycloakify and remove useless stuffs  
+- Update dependencies  
+- Update keycloakify  
+- Update for v2    
+  
 ### **0.2.14** (2021-06-22)  
   
 - Update deps  
