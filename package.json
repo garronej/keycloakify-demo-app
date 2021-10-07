@@ -12,13 +12,14 @@
         "keycloak": "yarn build && build-keycloak-theme",
         "start": "react-scripts start",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "download-builtin-keycloak-theme": "download-builtin-keycloak-theme 15.0.2"
     },
     "author": "u/garronej",
     "license": "MIT",
     "keywords": [],
     "dependencies": {
-        "keycloakify": "^2.0.14",
+        "keycloakify": "^2.2.0",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
         "tss-react": "^0.7.3",

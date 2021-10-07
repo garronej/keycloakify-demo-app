@@ -5070,19 +5070,10 @@ evp_bytestokey@^1.0.0, evp_bytestokey@^1.0.3:
     md5.js "^1.3.4"
     safe-buffer "^5.1.1"
 
-evt@2.0.0-beta.27:
-  version "2.0.0-beta.27"
-  resolved "https://registry.yarnpkg.com/evt/-/evt-2.0.0-beta.27.tgz#b9f59026f706487dd87a5ac4c91211d9ddb068b5"
-  integrity sha512-v9hFipQFn3qIo3dwawS1DOQKf/CYZYRn4QR+1FoASGePRgKVQ/YB0dDpI6v5/PFb8z6Kobz6JBrOaYKnltaz6A==
-  dependencies:
-    minimal-polyfills "^2.2.1"
-    run-exclusive "^2.2.14"
-    tsafe "^0.4.1"
-
-evt@2.0.0-beta.29:
-  version "2.0.0-beta.29"
-  resolved "https://registry.yarnpkg.com/evt/-/evt-2.0.0-beta.29.tgz#2cc940a4202d63bdcde21b282269d8b41829ec93"
-  integrity sha512-NgkSE9GV/aiXFqKYsMRZpOc2XihuPc4z5/OV6gxwwxJEZE1NURZ/GaAmHSEPuICHIQFwjI5xMOujhGIStHxgJg==
+evt@2.0.0-beta.38:
+  version "2.0.0-beta.38"
+  resolved "https://registry.yarnpkg.com/evt/-/evt-2.0.0-beta.38.tgz#9886a08889cddba1984a236efd6d352f9d6a6539"
+  integrity sha512-b35iBAVlDHVHOqgWzjSBJZu3C0GRZ/2cIHfNFuMSWwLT/WJO2n/4x7hg6BpaNJlSRywBAtf8KcU1GUyVfEhVIA==
   dependencies:
     minimal-polyfills "^2.2.1"
     run-exclusive "^2.2.14"
@@ -7373,21 +7364,21 @@ jsprim@^1.2.2:
     array-includes "^3.1.2"
     object.assign "^4.1.2"
 
-keycloakify@^2.0.14:
-  version "2.0.14"
-  resolved "https://registry.yarnpkg.com/keycloakify/-/keycloakify-2.0.14.tgz#f37a1e6c781653c0a4444e2c8f53130a3b00e2ee"
-  integrity sha512-V5nXxx9d+Qp7/H8UhX3WArywv4zd1THaOMXAs+EgcwysJW8760+FDLBAlh2bNJ4Pnbh5RTWJxJf+G3kSTXKZfg==
+keycloakify@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/keycloakify/-/keycloakify-2.2.0.tgz#9e0b6306d741f72fca8cd423d0e8d885c1755ad1"
+  integrity sha512-WY8ryUm4JltAJKXirKFC+h0mGvsgTK3zLRlwPITV7Ecr29WpZsgVBoW2F0jDeaDZjY2823kCAIxFgkgd1JtqeA==
   dependencies:
     "@emotion/react" "^11.4.1"
     cheerio "^1.0.0-rc.5"
-    evt "2.0.0-beta.27"
+    evt "2.0.0-beta.38"
     minimal-polyfills "^2.2.1"
     path "^0.12.7"
-    powerhooks "^0.7.1"
+    powerhooks "^0.9.3"
     react-markdown "^5.0.3"
     scripting-tools "^0.19.13"
     tsafe "^0.4.1"
-    tss-react "^0.7.3"
+    tss-react "^0.9.1"
 
 killable@^1.0.1:
   version "1.0.1"
@@ -9582,12 +9573,12 @@ postcss@^8.1.0:
     nanoid "^3.1.23"
     source-map-js "^0.6.2"
 
-powerhooks@^0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/powerhooks/-/powerhooks-0.7.1.tgz#79d46521740dbcef98ba9456a151b0152b475304"
-  integrity sha512-0cGyufXN92g0ToF4rWBnCgHWvwN7B668UrnfuRIoekIX1cuAjpnv+1XDFqlXY0SuP+pNcWSJzvMTSTT2U/wh3w==
+powerhooks@^0.9.3:
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/powerhooks/-/powerhooks-0.9.3.tgz#e54553dd0da79380130f5646f403fca93d205988"
+  integrity sha512-/UMoLQM6Lbfd1DF88v0hxgQMNB438fimLgxYj6dmij6jGmh3QGynxBj+tM6Ueg2gJ7EOLNizfU3NQ+nicFb19Q==
   dependencies:
-    evt "2.0.0-beta.29"
+    evt "2.0.0-beta.38"
     memoizee "^0.4.15"
     resize-observer-polyfill "^1.5.1"
     tsafe "^0.4.1"
@@ -11706,6 +11697,17 @@ tss-react@^0.7.3:
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/tss-react/-/tss-react-0.7.3.tgz#27d3b7bcd256773ea481839e6a0315d658f0c65e"
   integrity sha512-nQ9THA3mfpW8hM55GRw+g/Dzt/v+3zd8WqacUcdDUPSTg8QLT0jPCOCzWNlP4/0J3iEhSC2V9k7WhdmEeQlopQ==
+  dependencies:
+    "@emotion/cache" "^11.4.0"
+    "@emotion/serialize" "^1.0.2"
+    "@emotion/server" "^11.4.0"
+    "@emotion/utils" "^1.0.0"
+    html-react-parser "^1.2.7"
+
+tss-react@^0.9.1:
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/tss-react/-/tss-react-0.9.4.tgz#cf3458f111f65bda903d33a1c7756ef797c489c2"
+  integrity sha512-dp9GPuzUNkh5DVkgiQPpisy0Edn4IXIG6T9pgGH4lJLrInq0VD8merR+qJGIBsf4e+6IlcZuLoOrQ9SQjbI8jw==
   dependencies:
     "@emotion/cache" "^11.4.0"
     "@emotion/serialize" "^1.0.2"
