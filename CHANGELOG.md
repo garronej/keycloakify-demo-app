@@ -1,3 +1,7 @@
+### **0.2.16** (2021-10-12)  
+  
+- Update keycloakify    
+  
 ### **0.2.15** (2021-10-07)  
   
 - Update keycloakify and remove useless stuffs  
