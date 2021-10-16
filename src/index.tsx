@@ -15,8 +15,8 @@ import tos_fr_url from "./tos_fr.md";
 import "./kcMessagesExtension"
 
 const { kcContext } = getKcContext({
-  /* Uncomment to test the login page for development */
-  "mockPageId": "login.ftl"
+  /* Uncomment to test th<e login page for development */
+  //"mockPageId": "login.ftl"
 });
 
 if (kcContext !== undefined) {
