@@ -13,8 +13,10 @@ import { Terms } from "./Terms";
 import { LoginOtp } from "keycloakify/lib/components/LoginOtp";
 import { LoginUpdateProfile } from "keycloakify/lib/components/LoginUpdateProfile";
 import { LoginIdpLinkConfirm } from "keycloakify/lib/components/LoginIdpLinkConfirm";
+import { RegisterUserProfile } from "keycloakify/lib/components/RegisterUserProfile";
 import { MyExtraPage1 } from "./MyExtraPage1";
 import { MyExtraPage2 } from "./MyExtraPage2";
+import "./kcMessagesExtension";
 
 export const KcApp = memo(({ kcContext }: { kcContext: KcContext; }) => {
     switch (kcContext.pageId) {
@@ -30,5 +32,6 @@ export const KcApp = memo(({ kcContext }: { kcContext: KcContext; }) => {
         case "login-idp-link-confirm.ftl": return <LoginIdpLinkConfirm {...{ kcContext, ...props }} />;
         case "my-extra-page-1.ftl": return <MyExtraPage1 {...{ kcContext, ...props }} />;
         case "my-extra-page-2.ftl": return <MyExtraPage2 {...{ kcContext, ...props }} />;
+        case "register-user-profile.ftl": return <RegisterUserProfile {...{ kcContext, ...props }} />;
     }
 });
