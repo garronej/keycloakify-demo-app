@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import myimg from "./myimg.png";
 
-function App() {
+export function App() {
 
   return (
     <div className="App">
@@ -14,5 +14,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

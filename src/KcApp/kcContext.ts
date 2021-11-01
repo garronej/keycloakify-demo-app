@@ -20,6 +20,7 @@ export const { kcContext } = getKcContext<
 		someCustomValue: string;
 	}
 >({
+	/* Uncomment to test */
 	//"mockPageId": "login.ftl",
 	/** 
 	 * Customize the simulated kcContext that will let us 
