@@ -2,7 +2,7 @@
     <img src="https://github.com/garronej/keycloakify-demo-app/workflows/ci/badge.svg?branch=main">
 </p>
 
-This repo constitutes an easily reusable CI setup for React App in general, and Apps that generates Keycloaks's theme 
+This repo constitutes an easily reusable CI setup for SPA React App in general, and Apps that generates Keycloaks's theme 
 using [keycloakify](https://github.com/InseeFrLab/keycloakify) in particular.
 
 By default this setup assumes you want to have single project for your main app and for your Keycloak pages.  
