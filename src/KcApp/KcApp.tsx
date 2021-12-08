@@ -4,7 +4,7 @@ import { memo } from "react";
 import type { KcContext } from "./kcContext";
 import { defaultKcProps as props } from "keycloakify";
 import { Login } from "keycloakify/lib/components/Login";
-import { Register } from "keycloakify/lib/components/Register";
+import { Register } from "./Register";
 import { Info } from "keycloakify/lib/components/Info";
 import { Error } from "keycloakify/lib/components/Error";
 import { LoginResetPassword } from "keycloakify/lib/components/LoginResetPassword";
