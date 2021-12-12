@@ -1227,13 +1227,13 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
-"@emotion/cache@^11.5.0":
-  version "11.5.0"
-  resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-11.5.0.tgz#a5eb78cbef8163939ee345e3ddf0af217b845e62"
-  integrity sha512-mAZ5QRpLriBtaj/k2qyrXwck6yeoz1V5lMt/jfj6igWU35yYlNKs2LziXVgvH81gnJZ+9QQNGelSsnuoAy6uIw==
+"@emotion/cache@^11.6.0":
+  version "11.6.0"
+  resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-11.6.0.tgz#65fbdbbe4382f1991d8b20853c38e63ecccec9a1"
+  integrity sha512-ElbsWY1KMwEowkv42vGo0UPuLgtPYfIs9BxxVrmvsaJVvktknsHYYlx5NQ5g6zLDcOTyamlDc7FkRg2TAcQDKQ==
   dependencies:
     "@emotion/memoize" "^0.7.4"
-    "@emotion/sheet" "^1.0.3"
+    "@emotion/sheet" "^1.1.0"
     "@emotion/utils" "^1.0.0"
     "@emotion/weak-memoize" "^0.2.5"
     stylis "^4.0.10"
@@ -1248,15 +1248,15 @@
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.5.tgz#2c40f81449a4e554e9fc6396910ed4843ec2be50"
   integrity sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ==
 
-"@emotion/react@^11.5.0":
-  version "11.5.0"
-  resolved "https://registry.yarnpkg.com/@emotion/react/-/react-11.5.0.tgz#19b5771bbfbda5e8517e948a2d9064810f0022bd"
-  integrity sha512-MYq/bzp3rYbee4EMBORCn4duPQfgpiEB5XzrZEBnUZAL80Qdfr7CEv/T80jwaTl/dnZmt9SnTa8NkTrwFNpLlw==
+"@emotion/react@^11.7.0":
+  version "11.7.0"
+  resolved "https://registry.yarnpkg.com/@emotion/react/-/react-11.7.0.tgz#b179da970ac0e8415de3ac165deadf8d9c4bf89f"
+  integrity sha512-WL93hf9+/2s3cA1JVJlz8+Uy6p6QWukqQFOm2OZO5ki51hfucHMOmbSjiyC3t2Y4RI8XUmBoepoc/24ny/VBbA==
   dependencies:
     "@babel/runtime" "^7.13.10"
-    "@emotion/cache" "^11.5.0"
+    "@emotion/cache" "^11.6.0"
     "@emotion/serialize" "^1.0.2"
-    "@emotion/sheet" "^1.0.3"
+    "@emotion/sheet" "^1.1.0"
     "@emotion/utils" "^1.0.0"
     "@emotion/weak-memoize" "^0.2.5"
     hoist-non-react-statics "^3.3.1"
@@ -1272,10 +1272,10 @@
     "@emotion/utils" "^1.0.0"
     csstype "^3.0.2"
 
-"@emotion/sheet@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@emotion/sheet/-/sheet-1.0.3.tgz#00c326cd7985c5ccb8fe2c1b592886579dcfab8f"
-  integrity sha512-YoX5GyQ4db7LpbmXHMuc8kebtBGP6nZfRC5Z13OKJMixBEwdZrJ914D6yJv/P+ZH/YY3F5s89NYX2hlZAf3SRQ==
+"@emotion/sheet@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@emotion/sheet/-/sheet-1.1.0.tgz#56d99c41f0a1cda2726a05aa6a20afd4c63e58d2"
+  integrity sha512-u0AX4aSo25sMAygCuQTzS+HsImZFuS8llY8O7b9MDRzbJM0kVJlAz6KNDqcG7pOuQZJmj/8X/rAW+66kMnMW+g==
 
 "@emotion/unitless@^0.7.5":
   version "0.7.5"
@@ -7307,10 +7307,10 @@ jsprim@^1.2.2:
     array-includes "^3.1.3"
     object.assign "^4.1.2"
 
-keycloakify@^4.2.13:
-  version "4.2.13"
-  resolved "https://registry.yarnpkg.com/keycloakify/-/keycloakify-4.2.13.tgz#bd552118a27017bbd2aa826aa11255eba56f8b3c"
-  integrity sha512-4zhJLwkqM/On8OlacpuqiLtMImL/rcVG+ThnrSlCrQK21Bcm+V8SZ+AFajr2znoUeWoC2kANJ4M7RLsMStoHtw==
+keycloakify@^4.2.14:
+  version "4.2.14"
+  resolved "https://registry.yarnpkg.com/keycloakify/-/keycloakify-4.2.14.tgz#7b7fab51eaecc4f8a2fd863c94ec1842d00d4783"
+  integrity sha512-NMKmebYFo/wFQ5+Mi/zpuxqX2s3eV1du5kCJHBn716IgbiuuHZivCuOdA6/pLzWyjdTT9GrK1GZgMZfOV7BLrA==
   dependencies:
     cheerio "^1.0.0-rc.5"
     evt "2.0.0-beta.38"
@@ -9488,10 +9488,10 @@ postcss@^8.1.0:
     picocolors "^1.0.0"
     source-map-js "^0.6.2"
 
-powerhooks@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/powerhooks/-/powerhooks-0.11.0.tgz#923749ed405a1189759cd3f16d36bd5efacfd40c"
-  integrity sha512-I48J5vJqlTRiR3eH6svxiIYLutdedu2YEd3uhCmK+pRg2jcuourVwp1UYORI/EzbKC9vv0X/0Vd/SZ6e07rYtA==
+powerhooks@^0.11.1:
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/powerhooks/-/powerhooks-0.11.1.tgz#047d2e723f51c57edca8713c096422775cf0922c"
+  integrity sha512-4BEJdLvlSdRlhs7VVylct+R1iYuy+3RjhKdIickClv1cfTSYods0zxkM0uzvTjkR6A1pDC6gIIPTu1CY3TmhsA==
   dependencies:
     evt "2.0.0-beta.38"
     memoizee "^0.4.15"
@@ -9790,7 +9790,7 @@ react-dev-utils@^11.0.2:
     strip-ansi "6.0.0"
     text-table "0.2.0"
 
-react-dom@^17.0.1:
+react-dom@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
   integrity sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
@@ -9901,7 +9901,7 @@ react-scripts@4.0.2:
   optionalDependencies:
     fsevents "^2.1.3"
 
-react@^17.0.1:
+react@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
   integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
@@ -11518,10 +11518,10 @@ tslib@^2.0.3, tslib@^2.2.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
-tss-react@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/tss-react/-/tss-react-3.0.0.tgz#b084e1d10d1ea23c925b6a2141c1e91a0c5e9a2d"
-  integrity sha512-aZ/DZEuUvqki/1TKKBM4OmRx6TI5lcaF4BLMo0D8lyT/5S7zRFaAdVfAlsirHcQNgOAdf5IjLUcEbCYWcY6PJw==
+tss-react@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/tss-react/-/tss-react-3.0.2.tgz#fc711a84e2c4ef1d98c73c5273f7b9d473638ebb"
+  integrity sha512-zIWQB1C/blPnXW05jfSvLwKQYBKc3qK2XQuEG1/qHsCeH1xokvxHHNwFRl570sW1oOFV9Ybb4JE4POJZ0eSWiA==
   dependencies:
     "@emotion/serialize" "*"
     "@emotion/utils" "*"
