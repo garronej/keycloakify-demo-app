@@ -25,7 +25,7 @@
     "license": "MIT",
     "keywords": [],
     "dependencies": {
-        "keycloakify": "^4.2.13",
+        "keycloakify": "^4.2.14",
         "tss-react": "^3.0.0",
         "@emotion/react": "^11.5.0",
         "powerhooks": "^0.11.0",
