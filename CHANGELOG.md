@@ -1,3 +1,11 @@
+### **0.2.19** (2021-12-08)  
+  
+- Remove pock gitops from ci workflow  
+- update ci  
+- Cleanup font import, use preload  
+- Update deps  
+- Update README.md    
+  
 ### **0.2.18** (2021-11-01)  
   
 - Update everything    
