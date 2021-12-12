@@ -1,3 +1,7 @@
+### **0.2.20** (2021-12-12)  
+  
+- Update dependencies    
+  
 ### **0.2.19** (2021-12-08)  
   
 - Remove pock gitops from ci workflow  
