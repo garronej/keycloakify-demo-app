@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/keycloakify-demo-app/static/css/main.ac41e89a.css",
-    "main.js": "/keycloakify-demo-app/static/js/main.8b996d3e.js",
+    "main.js": "/keycloakify-demo-app/static/js/main.bead23ee.js",
     "static/media/tos_fr.md": "/keycloakify-demo-app/static/media/tos_fr.e2782512059e628847b3.md",
     "static/media/tos_en.md": "/keycloakify-demo-app/static/media/tos_en.c09b3947e7e60b4d2380.md",
     "static/media/logo.svg": "/keycloakify-demo-app/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/keycloakify-demo-app/index.html",
     "main.ac41e89a.css.map": "/keycloakify-demo-app/static/css/main.ac41e89a.css.map",
-    "main.8b996d3e.js.map": "/keycloakify-demo-app/static/js/main.8b996d3e.js.map"
+    "main.bead23ee.js.map": "/keycloakify-demo-app/static/js/main.bead23ee.js.map"
   },
   "entrypoints": [
     "static/css/main.ac41e89a.css",
-    "static/js/main.8b996d3e.js"
+    "static/js/main.bead23ee.js"
   ]
 }
