@@ -4096,10 +4096,10 @@ events@^3.2.0:
   resolved "https://registry.yarnpkg.com/events/-/events-3.3.0.tgz#31a95ad0a924e2d2c419a813aeb2c4e878ea7400"
   integrity sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==
 
-evt@2.0.0-beta.38:
-  version "2.0.0-beta.38"
-  resolved "https://registry.yarnpkg.com/evt/-/evt-2.0.0-beta.38.tgz#9886a08889cddba1984a236efd6d352f9d6a6539"
-  integrity sha512-b35iBAVlDHVHOqgWzjSBJZu3C0GRZ/2cIHfNFuMSWwLT/WJO2n/4x7hg6BpaNJlSRywBAtf8KcU1GUyVfEhVIA==
+evt@2.0.0-beta.39:
+  version "2.0.0-beta.39"
+  resolved "https://registry.yarnpkg.com/evt/-/evt-2.0.0-beta.39.tgz#3c859a83b35940f7eecfb5f148f03b7cbf3fee51"
+  integrity sha512-XxJkaHrFWBrzjTbnr5LJYXkGkADsAXReZfq2lFu3Kf1iCEw5/5ibrdXu3bQdWW6xkZ8qwAHT3STU9zYcCl09BA==
   dependencies:
     minimal-polyfills "^2.2.1"
     run-exclusive "^2.2.14"
@@ -5964,18 +5964,18 @@ jsprim@^1.2.2:
     array-includes "^3.1.3"
     object.assign "^4.1.2"
 
-keycloakify@^4.2.18:
-  version "4.2.18"
-  resolved "https://registry.yarnpkg.com/keycloakify/-/keycloakify-4.2.18.tgz#39cd074429f886c038b0e2d059eec787d4bfe501"
-  integrity sha512-mZt/TLMbSqQYLi4LxetHCABSCgD/efQea+efogYPRl2omeVRArbFdmCmm5xv+eymRZhf2FKiqVlACk1IvgKndg==
+keycloakify@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/keycloakify/-/keycloakify-4.3.0.tgz#f1b82c117e4eb0ba863c01ca7663919538b82f3b"
+  integrity sha512-7P9ixYXBoShJEdt4ejLKt/3/uSIrd8gPSH+czJu5y3QTNZQZOPoJq981e2+VSwsEsDd1Y7VB1KQV6XfskDi2dw==
   dependencies:
     cheerio "^1.0.0-rc.5"
-    evt "2.0.0-beta.38"
+    evt "2.0.0-beta.39"
     minimal-polyfills "^2.2.1"
     path-browserify "^1.0.1"
     react-markdown "^5.0.3"
     scripting-tools "^0.19.13"
-    tsafe "^0.8.1"
+    tsafe "^0.9.0"
 
 kind-of@^6.0.2:
   version "6.0.3"
@@ -7530,12 +7530,12 @@ postcss@^8.1.6, postcss@^8.2.15, postcss@^8.3.5, postcss@^8.4.4:
     picocolors "^1.0.0"
     source-map-js "^1.0.1"
 
-powerhooks@^0.11.1:
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/powerhooks/-/powerhooks-0.11.1.tgz#047d2e723f51c57edca8713c096422775cf0922c"
-  integrity sha512-4BEJdLvlSdRlhs7VVylct+R1iYuy+3RjhKdIickClv1cfTSYods0zxkM0uzvTjkR6A1pDC6gIIPTu1CY3TmhsA==
+powerhooks@^0.11.2:
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/powerhooks/-/powerhooks-0.11.2.tgz#964b1e13990be7da7d50bcd38a1eed9a44ca7778"
+  integrity sha512-imV2Gx/pG53G6t54Q5gad14x6LLNbVz1+SvPAEYjFyDf8JzQ3FuURuchwroijSdWXQrm6NRLgOdo+SySWrFxpg==
   dependencies:
-    evt "2.0.0-beta.38"
+    evt "2.0.0-beta.39"
     memoizee "^0.4.15"
     resize-observer-polyfill "^1.5.1"
     tsafe "^0.8.1"
@@ -9069,6 +9069,11 @@ tsafe@^0.8.1:
   resolved "https://registry.yarnpkg.com/tsafe/-/tsafe-0.8.1.tgz#9af7e1540bc04313a82d60c98056a5017c8b086b"
   integrity sha512-EfPjxQHzndQAV/uh0SMGP26Wg3dCuaw8dRv2VPEuGHen5qzg2oqsMvZw2wkQFkiMisZq2fm95m5lheimW2Fpvg==
 
+tsafe@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/tsafe/-/tsafe-0.9.0.tgz#8394e5fdf81e690c97e2b8be4180a079a4a19bfb"
+  integrity sha512-wmbu8pI/xmW69b13HoS8WbTcSlRTDjIut9ACblBjVZVTk0vsMRXdoh1k1jMu5EzKNohBavKHhqNOOsccSR7XCA==
+
 tsconfig-paths@^3.11.0:
   version "3.12.0"
   resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.12.0.tgz#19769aca6ee8f6a1a341e38c8fa45dd9fb18899b"
@@ -9089,10 +9094,10 @@ tslib@^2.0.3, tslib@^2.2.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
-tss-react@^3.0.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/tss-react/-/tss-react-3.2.2.tgz#e95355e43bd239509c548e90d24b8f1bd5f0e8ed"
-  integrity sha512-GWbXnKAm8FxCX27s2lJQEXpCMkjUjvsLxIvRl5czna3bvckmBbVVhvaZWQKde7QY1568bfjKk5RsdOw0/FydEg==
+tss-react@^3.2.4:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/tss-react/-/tss-react-3.2.4.tgz#190ec728885c397236313b05ac3eedf0a744a86b"
+  integrity sha512-bkJPnSvR2ronceKYzzlzyB/q6xX5QxRK+m5UWfwndOg421kb0TjYDA7P8pwkhsBVngvRaGYAxXYr0IhqaAg5eA==
   dependencies:
     "@emotion/serialize" "*"
     "@emotion/utils" "*"

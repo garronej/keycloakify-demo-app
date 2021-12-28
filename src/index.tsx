@@ -38,7 +38,7 @@ function KcApp() {
 
   const { kcLanguageTag } = useKcLanguageTag();
 
-  const { css } = useCssAndCx();
+  const { css } = useCssAndCx();
 
   //Lazily download the therms and conditions in the appropriate language
   //if we are on the terms.ftl page.
