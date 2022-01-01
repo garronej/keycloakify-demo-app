@@ -1,6 +1,6 @@
 import { memo } from "react";
 import type { KcProps } from "keycloakify";
-import type { KcContext } from "./kcContext";
+import type { KcContext } from "./kcContext";
 
 type KcContext_MyExtraPage2 = Extract<KcContext, { pageId: "my-extra-page-2.ftl"; }>;
 
