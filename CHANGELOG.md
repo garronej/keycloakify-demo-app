@@ -1,3 +1,7 @@
+### **0.2.23** (2022-01-01)  
+  
+- Update keycloakify    
+  
 ### **0.2.22** (2021-12-28)  
   
 -  Update dependencies    
