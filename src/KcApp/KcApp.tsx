@@ -15,6 +15,7 @@ import { LoginUpdateProfile } from "keycloakify/lib/components/LoginUpdateProfil
 import { LoginIdpLinkConfirm } from "keycloakify/lib/components/LoginIdpLinkConfirm";
 import { RegisterUserProfile } from "keycloakify/lib/components/RegisterUserProfile";
 import { LoginUpdatePassword } from "keycloakify/lib/components/LoginUpdatePassword";
+import { LoginPageExpired } from "keycloakify/lib/components/LoginPageExpired";
 import { MyExtraPage1 } from "./MyExtraPage1";
 import { MyExtraPage2 } from "./MyExtraPage2";
 import "./kcMessagesExtension";
@@ -35,5 +36,6 @@ export const KcApp = memo(({ kcContext }: { kcContext: KcContext; }) => {
         case "my-extra-page-2.ftl": return <MyExtraPage2 {...{ kcContext, ...props }} />;
         case "register-user-profile.ftl": return <RegisterUserProfile {...{ kcContext, ...props }} />;
         case "login-update-password.ftl": return <LoginUpdatePassword {...{ kcContext, ...props }} />;
+        case "login-page-expired.ftl": return <LoginPageExpired {...{ kcContext, ...props }} />;
     }
 });
