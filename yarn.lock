@@ -5964,10 +5964,10 @@ jsprim@^1.2.2:
     array-includes "^3.1.3"
     object.assign "^4.1.2"
 
-keycloakify@^4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/keycloakify/-/keycloakify-4.5.0.tgz#252f37bb2dad63bee1d504f1c4aa74f134573179"
-  integrity sha512-CaU+O74JYHL+8Fie4NJvs2Dgqaea9pTS8bHz6W+ZaoJS0wAtGth1shLrgA9ipFkgNODPgtb/V9GO56teYSoANA==
+keycloakify@^4.5.1:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/keycloakify/-/keycloakify-4.5.1.tgz#6b484b8863d345e077592d3a91b58e84c7a48aae"
+  integrity sha512-jcxAPeQWajraP1wGNucGyVuIJjW2CXhTKSnpuk5fh/8FMZ17rAyKBDt4tM8au/RqaDOm1OCkn1BCMOPwe7InhA==
   dependencies:
     cheerio "^1.0.0-rc.5"
     evt "2.0.0-beta.39"
