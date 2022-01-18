@@ -1,3 +1,9 @@
+## **0.3.0** (2022-01-18)  
+  
+- update lock file  
+- Fix previous build  
+- Make it work with both gh pages and Docker    
+  
 ### **0.2.23** (2022-01-01)  
   
 - Update keycloakify    
