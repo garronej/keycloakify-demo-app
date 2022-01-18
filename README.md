@@ -14,7 +14,7 @@ using [keycloakify](https://github.com/InseeFrLab/keycloakify) in particular.
 
 # The CI workflow
 
-- This CI is configured to both publish on [GitHub Pages](https://github.com/garronej/keycloakify-demo-app/blob/224c43383548635a463fa68e8909c147ac189f0e/.github/workflows/ci.yaml#L172-L187) and on [DockerHub](https://github.com/garronej/keycloakify-demo-app/blob/224c43383548635a463fa68e8909c147ac189f0e/.github/workflows/ci.yaml#L56-L94). In practice you probably want one
+- This CI is configured to both publish on [GitHub Pages](https://github.com/garronej/keycloakify-demo-app/blob/71baa789254f00bf521d40dc0a8db6925aa72942/.github/workflows/ci.yaml#L47-L65) and on [DockerHub](https://github.com/garronej/keycloakify-demo-app/blob/71baa789254f00bf521d40dc0a8db6925aa72942/.github/workflows/ci.yaml#L66-L111). In practice you probably want one
 or the other but not both.  
 We deploy the demo app at [keycloakify-demo-app.onyxia.dev](https://keycloakify-demo-app.onyxia.dev).  
 If
