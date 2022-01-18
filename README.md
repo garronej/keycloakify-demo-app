@@ -9,9 +9,6 @@ using [keycloakify](https://github.com/InseeFrLab/keycloakify) in particular.
 > By default this setup assumes you want to have single project for your main app and for your Keycloak pages.  
 > If, however, you want a starting point for a project which only purpose is to be a Keycloak theme [read this](/standalone-keycloak-theme).
 
-> If you want to customize your login page further than just providing your
-> CSS class names heads over to [the look_and_feel branch](https://github.com/garronej/keycloakify-demo-app/tree/look_and_feel).
-
 # The CI workflow
 
 - This CI is configured to both publish on [GitHub Pages](https://github.com/garronej/keycloakify-demo-app/blob/71baa789254f00bf521d40dc0a8db6925aa72942/.github/workflows/ci.yaml#L47-L65) and on [DockerHub](https://github.com/garronej/keycloakify-demo-app/blob/71baa789254f00bf521d40dc0a8db6925aa72942/.github/workflows/ci.yaml#L66-L111). In practice you probably want one
