@@ -3,13 +3,25 @@
 </p>
 
 This repo constitutes an easily reusable CI setup for SPA React App in general, and Apps that generates Keycloaks's theme 
-using [keycloakify](https://github.com/InseeFrLab/keycloakify) in particular.
+using [keycloakify](https://github.com/InseeFrLab/keycloakify) in particular.  
+(If you are building reusable SPA apps you might also be interested by [cra-envs](https://github.com/garronej/cra-envs))
 
-By default this setup assumes you want to have single project for your main app and for your Keycloak pages.  
-If, however, you want a starting point for a project which only purpose is to be a Keycloak theme [read this](/keycloak-theme-only).
+> By default this setup assumes you want to have single project for your main app and for your Keycloak pages.  
+> If, however, you want a starting point for a project which only purpose is to be a Keycloak theme [read this](/standalone-keycloak-theme).
 
-- This CI is configured to both publish on [github-pages](https://github.com/garronej/keycloakify-demo-app/blob/224c43383548635a463fa68e8909c147ac189f0e/.github/workflows/ci.yaml#L172-L187) and on [DockerHub](https://github.com/garronej/keycloakify-demo-app/blob/224c43383548635a463fa68e8909c147ac189f0e/.github/workflows/ci.yaml#L56-L94). In practice you probably want one
-or the other but not both. 
+> If you want to customize your login page further than just providing your
+> CSS class names heads over to [the look_and_feel branch](https://github.com/garronej/keycloakify-demo-app/tree/look_and_feel).
+
+# The CI workflow
+
+- This CI is configured to both publish on [GitHub Pages](https://github.com/garronej/keycloakify-demo-app/blob/71baa789254f00bf521d40dc0a8db6925aa72942/.github/workflows/ci.yaml#L47-L65) and on [DockerHub](https://github.com/garronej/keycloakify-demo-app/blob/71baa789254f00bf521d40dc0a8db6925aa72942/.github/workflows/ci.yaml#L66-L111). In practice you probably want one
+or the other but not both.  
+We deploy the demo app at [keycloakify-demo-app.onyxia.dev](https://keycloakify-demo-app.onyxia.dev).  
+If
+you want to use your own domain you need to update [the `public/CNAME` file](https://github.com/garronej/keycloakify-demo-app/blob/main/public/CNAME).  
+If you want to deploy on the default domain GitHub provide for you, remove the `CNAME` file and
+add a in your `package.json`: `"hostname": "https://<your_username>.github.io/<your_repo>"` 
+(example `https://garronej.github.io/keycloakfiy-demo-app`).
 - To release **don't create a tag manually**, the CI do it for you. Just update the `package.json`'s version field and push.
 - The `.jar` files that bundle the Keycloak theme will be attached as an asset with every GitHub release. [Example](https://github.com/InseeFrLab/keycloakify-demo-app/releases/tag/v0.1.0). The permalink to download the latest version is: `https://github.com/USER/PROJECT/releases/latest/download/keycloak-theme.jar`. 
   For this demo repo it's [here](https://github.com/garronej/keycloakify-demo-app/releases/latest/download/keycloak-theme.jar)
@@ -19,40 +31,34 @@ or the other but not both.
 - A [CHANGELOG.md](https://github.com/InseeFrLab/keycloakify-demo-app/blob/main/CHANGELOG.md) will be maintained for you using the commit messages between releases. *If you don't want a specific commit to appear
   in the changelog do something like. `git commit -am "yadi yada (changelog ignore)`.*
 
-![image](https://user-images.githubusercontent.com/6702424/114286938-47aea600-9a63-11eb-936e-17159e8826e8.png)
+![image](https://user-images.githubusercontent.com/6702424/149981027-a56dbd22-6b74-461b-be53-f460daa28700.png)
   
-![image](https://user-images.githubusercontent.com/6702424/110708577-2d32a400-81fb-11eb-98ae-499d5746c2f2.png)
+![image](https://user-images.githubusercontent.com/6702424/149980234-3587221c-5d50-47a2-a0fd-d3cf0fe46fc4.png)
 
 If you want an example of an app that put that setup in production checkout onyxia-ui: [the repo](https://github.com/InseeFrLab/onyxia-ui), [the login](https://auth.lab.sspcloud.fr/auth/realms/sspcloud/protocol/openid-connect/auth?client_id=onyxia&redirect_uri=https%3A%2F%2Fonyxia.lab.sspcloud.fr), [the app](https://datalab.sspcloud.fr).  
 
-# Important note about Keycloakify
 
-This branch is configured for customizing only the css of the keycloak pages.  
-If you want to implement a more advanced configuration you can checkout the 
-[look_and_feel](https://github.com/garronej/keycloakify-demo-app/tree/look_and_feel) branch.  
+> This repo is currently configured to build the theme with  [`--external-assets`](https://github.com/InseeFrLab/keycloakify#specify-from-where-the-resources-should-be-downloaded). 
+> If your keycloak pages need to stay up even when your app is down you should remove `--external-assets` [here](https://github.com/garronej/keycloakify-demo-app/blob/f87f211c433d1520c9ecf66565c6b88779aa98ed/.github/workflows/ci.yaml#L139).
 
- This repo is currently configured to build the theme with  [`--external-assets`](https://github.com/InseeFrLab/keycloakify#specify-from-where-the-resources-should-be-downloaded). 
- If your keycloak pages need to stay up even when your app is down you should remove `--external-assets` [here](https://github.com/garronej/keycloakify-demo-app/blob/f87f211c433d1520c9ecf66565c6b88779aa98ed/.github/workflows/ci.yaml#L139).
+# Docker
 
-# DockerHub credentials
+```bash
+docker build -f Dockerfile -t garronej/keycloakify-demo-app:test .
+#OR (to reproduce how the image is built in the ci workflow):
+yarn && yarn build && tar -cvf build.tar ./build && docker build -f Dockerfile.ci -t garronej/keycloakify-demo-app:test . && rm build.tar
+
+docker run -it -dp 8083:80 garronej/keycloakify-demo-app:test
+```
+
+## DockerHub credentials
 
 To enables the CI to publish on DockerHub on your behalf go to 
 repository ``Settings`` tab, then ``Secrets`` you will need to add two new secrets:
 - ``DOCKERHUB_TOKEN``, you Dockerhub authorization token.
 - ``DOCKERHUB_USERNAME``, Your Dockerhub username.  
-# Docker
 
-```bash
-docker build -f Dockerfile -t garronej/keycloakify-demo-app:test .
-#OR:
-yarn && yarn build && tar -cvf build.tar ./build && docker build -f Dockerfile.ci -t garronej/keycloakify-demo-app:test . && rm build.tar
-
-docker run -it -dp 8083:80 garronej/keycloakify-demo-app:test
-
-# http://localhost:8083/keycloakify-demo-app won't work because of the nginx.config for / and not /keycloakify-demo-app
-```
-
-# Keycloak theme only
+# Standalone keycloak theme
 
 If you are only looking to create a keycloak theme, there are a lot of things you should remove after clicking ![image](https://user-images.githubusercontent.com/6702424/98155461-92395e80-1ed6-11eb-93b2-98c64453043f.png):  
 

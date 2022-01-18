@@ -45,11 +45,17 @@ jobs:
         action_name: is_package_json_version_upgraded
 
   github_pages:
-    needs: check_if_version_upgraded
     runs-on: ubuntu-latest
+    needs: 
+      - check_if_version_upgraded
+      - build
+    # We publish the the docker image only if it's a push on the default branch or if it's a PR from a 
+    # branch (meaning not a PR from a fork). It would be more straightforward to test if secrets.DOCKERHUB_TOKEN is 
+    # defined but GitHub Action don't allow it.
     if: |
-      github.event_name == 'push' &&
-      needs.check_if_version_upgraded.outputs.is_upgraded_version == 'true'
+      needs.check_if_version_upgraded.outputs.is_upgraded_version == 'true' &&
+      github.event_name == 'push' || 
+      github.event.pull_request.head.repo.owner.login == github.event.pull_request.base.repo.owner.login 
     steps:
     - uses: actions/checkout@v2
     - uses: actions/download-artifact@v2
@@ -63,6 +69,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - run: npx -y -p gh-pages@3.1.0 gh-pages -d build -u "github-actions-bot <actions@github.com>"
+
   docker:
     needs: 
       - check_if_version_upgraded

@@ -1,13 +1,14 @@
 # This is an alternative Dockerfile 
-# that aims to be used in the CI pipeline.
-# In this version we assume that the app have been build
+# that aims to be used in the CI pipeline.
+# In this version we assume that the app have been build (yarn build that generate ./build/)
 # prior and archived into a build.tar file present in the context.
-# We have to do that because if we use build-keycloak-theme --external-assets
-# we must use the build/ directory that have been patched while building
-# the keycloak theme. 
+# We do do that because 
+# 1) We want to avoid building the app twice, one for the docker image and one for the theme .tar
+# 2) If we use build-keycloak-theme --external-assets we have to generate the theme from the build/ directory
+# that is going to be in production. (CRA generates hashes, every build is different, even if the code is the same)
 
 # build environment
-FROM node:14.16.0-alpine as build
+FROM alpine as build
 WORKDIR /app
 #We use ADD instead of COPY because build/ is in .dockerignore
 ADD build.tar .
