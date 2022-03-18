@@ -1,3 +1,7 @@
+### **0.3.3** (2022-03-18)  
+  
+- Update deps    
+  
 ### **0.3.2** (2022-03-17)  
   
 - powerhooks is no longer a peerDependency  
