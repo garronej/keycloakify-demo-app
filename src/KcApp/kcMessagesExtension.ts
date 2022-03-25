@@ -4,7 +4,7 @@ Object.assign(
 	kcMessages["fr"],
 	{
 		/* spell-checker: disable */
-		"foo": "foo en Francais",
+		"gender": "Genre",
 		/* spell-checker: enable */
 	}
 );
@@ -12,6 +12,6 @@ Object.assign(
 Object.assign(
 	kcMessages["en"],
 	{
-		"foo": "foo in English",
+		"gender": "Gender",
 	}
 );
