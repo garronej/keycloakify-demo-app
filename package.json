@@ -25,7 +25,7 @@
     "keywords": [],
     "dependencies": {
         "keycloakify": "^4.7.0",
-        "tss-react": "^3.5.2",
+        "tss-react": "^3.6.0",
         "@emotion/react": "^11.7.0",
         "react": "^17.0.1",
         "react-dom": "^17.0.1"
