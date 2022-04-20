@@ -2,15 +2,15 @@
     <img src="https://github.com/garronej/keycloakify-demo-app/workflows/ci/badge.svg?branch=main">
 </p>
 
+> If you want to customize your login page further than just providing your
+> CSS class names heads over to [the look_and_feel branch](https://github.com/garronej/keycloakify-demo-app/tree/look_and_feel).
+
 This repo constitutes an easily reusable CI setup for SPA React App in general, and Apps that generates Keycloaks's theme 
 using [keycloakify](https://github.com/InseeFrLab/keycloakify) in particular.  
 (If you are building reusable SPA apps you might also be interested by [cra-envs](https://github.com/garronej/cra-envs))
 
 > By default this setup assumes you want to have single project for your main app and for your Keycloak pages.  
 > If, however, you want a starting point for a project which only purpose is to be a Keycloak theme [read this](/standalone-keycloak-theme).
-
-> If you want to customize your login page further than just providing your
-> CSS class names heads over to [the look_and_feel branch](https://github.com/garronej/keycloakify-demo-app/tree/look_and_feel).
 
 # The CI workflow
 
@@ -69,9 +69,6 @@ If you are only looking to create a keycloak theme, there are a lot of things yo
 - You can remove `/Dockerfile`, `Dockerfile.ci` ,`/.dockerignore` and `/nginx.conf`
 - You can assume the app will only run in the context of Keycloak so you can remove [these lines](https://github.com/garronej/keycloakify-demo-app/blob/095e8e9b044044364ffb8a4c6e6a14e33674886e/src/index.tsx#L30-L31) 
   in `src/index.tsx` (and you can, of course, remove `src/App.tsx`, `App.css` ect...).
-- Replaces [those lines](https://github.com/garronej/keycloakify-demo-app/blob/095e8e9b044044364ffb8a4c6e6a14e33674886e/src/index.tsx#L18-L23) by 
-  `const kcContext = realKcContext ?? kcContextMocks.kcLoginContext;`, now if you run `yarn start` you will be able to debug the login page, replace `kcLoginContext` by
-  `kcRegisterContext` and the register page will be loaded instead.
 - You can remove the `homepage` field from [the package.json](https://github.com/garronej/keycloakify-demo-app/blob/095e8e9b044044364ffb8a4c6e6a14e33674886e/package.json#L2)
 
 For the rest all stays the same, when your theme is ready, just upgrade the version in `package.json` and push.  
