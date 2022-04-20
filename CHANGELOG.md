@@ -1,3 +1,7 @@
+### **0.3.5** (2022-04-20)  
+  
+- update keycloakify    
+  
 ### **0.3.4** (2022-04-20)  
   
 - Add email template from keycloak 18  
