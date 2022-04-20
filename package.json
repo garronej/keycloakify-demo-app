@@ -11,8 +11,7 @@
         "keycloak": "yarn build && build-keycloak-theme",
         "start": "react-scripts start",
         "test": "react-scripts test",
-        "eject": "react-scripts eject",
-        "download-builtin-keycloak-theme": "download-builtin-keycloak-theme 15.0.2"
+        "eject": "react-scripts eject"
     },
     "keycloakify": {
         "extraPages": [
@@ -24,7 +23,7 @@
     "license": "MIT",
     "keywords": [],
     "dependencies": {
-        "keycloakify": "^4.7.4",
+        "keycloakify": "^4.8.1",
         "tss-react": "^3.6.0",
         "@emotion/react": "^11.7.0",
         "react": "^17.0.1",
