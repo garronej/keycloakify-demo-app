@@ -57,7 +57,7 @@ repository ``Settings`` tab, then ``Secrets`` you will need to add two new secre
 
 # Standalone keycloak theme
 
-If you are only looking to create a keycloak theme, there are a lot of things you should remove after clicking ![image](https://user-images.githubusercontent.com/6702424/98155461-92395e80-1ed6-11eb-93b2-98c64453043f.png):  
+If you are only looking to create a keycloak theme, there are a lot of things you should remove after forking this branch.  
 
 - You can remove all things related to building a docker image and publishing on github pages: 
   remove [these lines](https://github.com/garronej/keycloakify-demo-app/blob/fc6bcb98b8d09ed13b5f52ed8d39923511669000/.github/workflows/ci.yaml#L45-L109) 
@@ -66,9 +66,6 @@ If you are only looking to create a keycloak theme, there are a lot of things yo
 - You can remove `/Dockerfile`, `Dockerfile.ci` ,`/.dockerignore` and `/nginx.conf`
 - You can assume the app will only run in the context of Keycloak so you can remove [these lines](https://github.com/garronej/keycloakify-demo-app/blob/095e8e9b044044364ffb8a4c6e6a14e33674886e/src/index.tsx#L30-L31) 
   in `src/index.tsx` (and you can, of course, remove `src/App.tsx`, `App.css` ect...).
-- Replaces [those lines](https://github.com/garronej/keycloakify-demo-app/blob/095e8e9b044044364ffb8a4c6e6a14e33674886e/src/index.tsx#L18-L23) by 
-  `const kcContext = realKcContext ?? kcContextMocks.kcLoginContext;`, now if you run `yarn start` you will be able to debug the login page, replace `kcLoginContext` by
-  `kcRegisterContext` and the register page will be loaded instead.
 - You can remove the `homepage` field from [the package.json](https://github.com/garronej/keycloakify-demo-app/blob/095e8e9b044044364ffb8a4c6e6a14e33674886e/package.json#L2)
 
 For the rest all stays the same, when your theme is ready, just upgrade the version in `package.json` and push.  
