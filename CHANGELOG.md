@@ -1,3 +1,9 @@
+### **0.3.4** (2022-04-20)  
+  
+- Add email template from keycloak 18  
+- Update instructions  
+- Update (M1 Mac compat)    
+  
 ### **0.3.3** (2022-03-18)  
   
 - Update deps    
