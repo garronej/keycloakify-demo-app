@@ -5713,10 +5713,10 @@ jsonpointer@^5.0.0:
     array-includes "^3.1.3"
     object.assign "^4.1.2"
 
-keycloakify@^4.8.3:
-  version "4.8.3"
-  resolved "https://registry.yarnpkg.com/keycloakify/-/keycloakify-4.8.3.tgz#09806afd94ce7bb19b6b6d65acfed74d51314428"
-  integrity sha512-z01+LTkYt4bUB268C8w14mZUGY+aySV1k4D34ga3EegHbRKiHHYSAZ9FvSv3L4/Sq8J5xQopcA8GIJAFdru/AA==
+keycloakify@^4.8.4:
+  version "4.8.4"
+  resolved "https://registry.yarnpkg.com/keycloakify/-/keycloakify-4.8.4.tgz#259e8ff8a22039eba6ea1c1553492b515244978d"
+  integrity sha512-qqDFAUwBVZC9UNTEXNZmb77zhb/adQ7sZKfUIpSf773HAu2bjr5idFJyiORM7+RGSHoUe8bWuOjuevrtxPqv6w==
   dependencies:
     "@octokit/rest" "^18.12.0"
     cheerio "^1.0.0-rc.5"
