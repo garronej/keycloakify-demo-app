@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { render } from "react-dom";
 import "./index.scss";
 import { App } from "./App";
@@ -7,7 +6,7 @@ import {
   defaultKcProps,
   getKcContext,
   kcMessages,
-  useKcLanguageTag
+  useDownloadTerms
 } from "keycloakify";
 import { useCssAndCx } from "tss-react";
 import tos_en_url from "./tos_en.md";
@@ -16,7 +15,15 @@ import "./kcMessagesExtension"
 
 const { kcContext } = getKcContext({
   /* Uncomment to test th<e login page for development */
-  //"mockPageId": "login.ftl"
+  //"mockPageId": "login.ftl",
+  "mockData": [
+    {
+      "pageId": "login.ftl",
+      "locale": {
+        "currentLanguageTag": "fr" //When we test the login page we do it in french
+      }
+    }
+  ]
 });
 
 if (kcContext !== undefined) {
@@ -36,41 +43,34 @@ function KcApp() {
     throw new Error();
   }
 
-  const { kcLanguageTag } = useKcLanguageTag();
+  useDownloadTerms({
+    kcContext,
+    "downloadTermMarkdown": async ({ currentKcLanguageTag }) => {
 
-  const { css } = useCssAndCx();
+      kcMessages[currentKcLanguageTag].termsTitle = "";
 
-  //Lazily download the therms and conditions in the appropriate language
-  //if we are on the terms.ftl page.
-  useEffect(
-    () => {
-
-      if (kcContext!.pageId !== "terms.ftl") {
-        return;
-      }
-
-      kcMessages[kcLanguageTag].termsTitle = "";
-
-      fetch((() => {
-        switch (kcLanguageTag) {
+      const markdownString = await fetch((() => {
+        switch (currentKcLanguageTag) {
           case "fr": return tos_fr_url;
           default: return tos_en_url;
         }
       })())
-        .then(response => response.text())
-        .then(rawMarkdown => kcMessages[kcLanguageTag].termsText = rawMarkdown);
+        .then(response => response.text());
 
-    },
-    [kcLanguageTag]
-  );
+      return markdownString;
+
+    }
+  });
+
+  const { css } = useCssAndCx();
 
   return (
-      <KcAppBase
-        kcContext={kcContext}
-        {...{
-          ...defaultKcProps,
-          "kcHeaderWrapperClass": css({ "color": "red", "fontFamily": '"Work Sans"' })
-        }}
-      />
+    <KcAppBase
+      kcContext={kcContext}
+      {...{
+        ...defaultKcProps,
+        "kcHeaderWrapperClass": css({ "color": "red", "fontFamily": '"Work Sans"' })
+      }}
+    />
   );
 }
