@@ -43,6 +43,9 @@ export const { kcContext } = getKcContext<
 		{
 			//NOTE: You will either use register.ftl or register-user-profile.ftl, not both, more info in Keycloakify's README
 			"pageId": "register-user-profile.ftl",
+			"locale": {
+				"currentLanguageTag": "fr"
+			},
 			"profile": {
 				"attributes": [
 					{
@@ -64,6 +67,7 @@ export const { kcContext } = getKcContext<
 								"options": ["male", "female", "non-binary", "transgender", "intersex", "non_communicated"]
 							}
 						},
+						// eslint-disable-next-line no-template-curly-in-string
 						"displayName": "${gender}",
 						"annotations": {},
 						"required": true,

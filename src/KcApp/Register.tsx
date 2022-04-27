@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { Template } from "keycloakify/lib/components/Template";
 import type { KcProps } from "keycloakify";
-import { useKcMessage } from "keycloakify/lib/i18n/useKcMessage";
+import { getMsg } from "keycloakify";
 import type { KcContext } from "./kcContext";
 import { useCssAndCx } from "tss-react";
 
@@ -23,7 +23,7 @@ export const Register = memo(({ kcContext, ...props }: { kcContext: KcContext_Re
         recaptchaSiteKey
     } = kcContext;
 
-    const { msg, msgStr } = useKcMessage();
+    const { msg, msgStr } = getMsg(kcContext);
 
     const { cx } = useCssAndCx();
 

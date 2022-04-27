@@ -1,4 +1,4 @@
-import { kcMessages } from "keycloakify/lib/i18n/useKcMessage";
+import { kcMessages } from "keycloakify";
 
 Object.assign(
 	kcMessages["fr"],

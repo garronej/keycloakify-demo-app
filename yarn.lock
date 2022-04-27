@@ -5713,15 +5713,16 @@ jsonpointer@^5.0.0:
     array-includes "^3.1.3"
     object.assign "^4.1.2"
 
-keycloakify@^4.8.4:
-  version "4.8.4"
-  resolved "https://registry.yarnpkg.com/keycloakify/-/keycloakify-4.8.4.tgz#259e8ff8a22039eba6ea1c1553492b515244978d"
-  integrity sha512-qqDFAUwBVZC9UNTEXNZmb77zhb/adQ7sZKfUIpSf773HAu2bjr5idFJyiORM7+RGSHoUe8bWuOjuevrtxPqv6w==
+keycloakify@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/keycloakify/-/keycloakify-5.0.0.tgz#c21254c18187a177c3f1cc1bc62e9e3d4fb4b520"
+  integrity sha512-u3muAtE9CuEU2XKvMqwcFaExaT7aNBvvYDUsjlOuVz1Hff1FyTnZpQK/h4Aom41Vi2FEk9ejx1mymV2m20pjuA==
   dependencies:
     "@octokit/rest" "^18.12.0"
     cheerio "^1.0.0-rc.5"
     cli-select "^1.1.2"
     evt "2.0.0-beta.39"
+    memoizee "^0.4.15"
     minimal-polyfills "^2.2.1"
     path-browserify "^1.0.1"
     powerhooks "^0.14.0"
