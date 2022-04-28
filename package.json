@@ -1,5 +1,6 @@
 {
     "name": "keycloakify-demo-app",
+    "homepage": "https://demo-app.keycloakify.dev",
     "version": "0.3.0",
     "description": "A demo project for keycloakify",
     "repository": {
@@ -23,7 +24,7 @@
     "license": "MIT",
     "keywords": [],
     "dependencies": {
-        "keycloakify": "^5.0.0",
+        "keycloakify": "^5.3.0",
         "tss-react": "^3.6.0",
         "@emotion/react": "^11.7.0",
         "react": "^17.0.1",
