@@ -1,3 +1,9 @@
+### **0.4.1** (2022-04-28)  
+  
+- add forgoten homepage field  
+- Update github pages management  
+- Update keycloakify    
+  
 ## **0.4.0** (2022-04-27)  
   
 - Update to Keycloakify 5  
