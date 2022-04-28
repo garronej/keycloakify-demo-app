@@ -16,12 +16,8 @@ using [keycloakify](https://github.com/InseeFrLab/keycloakify) in particular.
 
 - This CI is configured to both publish on [GitHub Pages](https://github.com/garronej/keycloakify-demo-app/blob/71baa789254f00bf521d40dc0a8db6925aa72942/.github/workflows/ci.yaml#L47-L65) and on [DockerHub](https://github.com/garronej/keycloakify-demo-app/blob/71baa789254f00bf521d40dc0a8db6925aa72942/.github/workflows/ci.yaml#L66-L111). In practice you probably want one
 or the other but not both.  
-We deploy the demo app at [keycloakify-demo-app.onyxia.dev](https://keycloakify-demo-app.onyxia.dev).  
-If
-you want to use your own domain you need to update [the `public/CNAME` file](https://github.com/garronej/keycloakify-demo-app/blob/main/public/CNAME).  
-If you want to deploy on the default domain GitHub provide for you, remove the `CNAME` file and
-add a in your `package.json`: `"hostname": "https://<your_username>.github.io/<your_repo>"` 
-(example `https://garronej.github.io/keycloakfiy-demo-app`).
+We deploy the demo app at [demo-app.keycloakify.dev](https://demo-app.keycloakify.dev) using GitHub page on the branch `gh-pages` (you have to enable it).  
+To configure your own domain name please refer to [this documentation](https://docs.gitlanding.dev/using-a-custom-domain-name).  p`).
 - To release **don't create a tag manually**, the CI do it for you. Just update the `package.json`'s version field and push.
 - The `.jar` files that bundle the Keycloak theme will be attached as an asset with every GitHub release. [Example](https://github.com/InseeFrLab/keycloakify-demo-app/releases/tag/v0.1.0). The permalink to download the latest version is: `https://github.com/USER/PROJECT/releases/latest/download/keycloak-theme.jar`. 
   For this demo repo it's [here](https://github.com/garronej/keycloakify-demo-app/releases/latest/download/keycloak-theme.jar)
