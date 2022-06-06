@@ -1,7 +1,7 @@
 {
     "name": "keycloakify-demo-app",
     "homepage": "https://demo-app.keycloakify.dev",
-    "version": "0.4.1",
+    "version": "0.4.2",
     "description": "A demo project for keycloakify",
     "repository": {
         "type": "git",
