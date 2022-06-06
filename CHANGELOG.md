@@ -1,3 +1,7 @@
+### **0.4.2** (2022-06-06)  
+  
+- Enable gzip    
+  
 ### **0.4.1** (2022-04-28)  
   
 - add forgoten homepage field  
