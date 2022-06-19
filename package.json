@@ -19,7 +19,7 @@
     "license": "MIT",
     "keywords": [],
     "dependencies": {
-        "keycloakify": "^5.4.4",
+        "keycloakify": "^5.4.7",
         "react": "18.1.0",
         "react-dom": "18.1.0",
         "@emotion/react": "^11.9.0",
