@@ -1,3 +1,8 @@
+### **0.4.3** (2022-06-19)  
+  
+- Update Keycloakify  
+- https://github.com/InseeFrLab/keycloakify/issues/116    
+  
 ### **0.4.2** (2022-06-06)  
   
 - Enable gzip    
