@@ -1,3 +1,8 @@
+
+⛔️ Deprecated ⛔️: New starters [CSS Only](https://github.com/garronej/keycloakify-starter) -- [Component level customization](https://github.com/garronej/keycloakify-advanced-starter)
+
+
+
 <p align="center">
     <img src="https://github.com/garronej/keycloakify-demo-app/workflows/ci/badge.svg?branch=main">
 </p>
